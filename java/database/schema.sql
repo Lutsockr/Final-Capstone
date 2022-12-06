@@ -10,4 +10,31 @@ CREATE TABLE users (
 	CONSTRAINT PK_user PRIMARY KEY (user_id)
 );
 
+CREATE TABLE auction (
+	auction_id SERIAL,
+	owner_id int,
+	title varchar(50),
+	description varchar(400),
+	starting_price money,
+	winning_bid_id int,
+	type_id int,
+	start_date timestamp,
+	end_date timestamp,
+	CONSTRAINT pk_auction PRIMARY KEY (auction_id)
+);
+
+CREATE TABLE auction_type (
+	auction_type_id int,
+	name varchar(50),
+	CONSTRAINT pk_auction_type PRIMARY KEY (auction_type_id)
+);
+
+CREATE TABLE bid (
+	bid_id SERIAL,
+	auction_id int,
+	user_id int,
+	amount money,
+	CONSTRAINT pk_bid PRIMARY KEY (bid_id)
+);
+
 COMMIT TRANSACTION;
