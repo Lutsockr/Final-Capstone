@@ -1,12 +1,19 @@
 <template>
   <div class="home">
-    <h1>Home</h1>
-    <p>You must be authenticated to see this</p>
+  
+   <list-of-auctions />
+     
   </div>
 </template>
 
 <script>
+import ListOfAuctions from '../components/ListOfAuctions.vue';
 export default {
+  components: {
+    ListOfAuctions
+  },
   name: "home"
 };
 </script>
+
+    ListOfAuctions
