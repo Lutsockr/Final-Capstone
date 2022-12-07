@@ -2,7 +2,7 @@
 <div class = 'a'>
     <div>
 
-        <div class="card"
+        <div class="card a"
             v-for="auction in auctions"
             v-bind:key="auction.id"  
         >
@@ -12,10 +12,9 @@
       <img src: previewImage class="uploading-image" />
       <input type="file" accept="image/png" @change=uploadImage>
     </div> -->
-
-            <p> Price: $</p>
-            <p> Details: </p>
-            <p class="seller"> Seller: </p>
+            <img height="200px" v-bind:src="auction.imagePath" >
+            <p> Price: $ {{ auction.startingPrice}}</p>
+            <p class="seller"> Seller: {{auction.ownerName}} </p>
         </div>
 
   <!-- <div>
@@ -70,7 +69,7 @@ export default {
     width: auto;
     height: 400px;
     margin: 20px;
-    background-color: blue;
+    background-color: aqua;
     
 }
 h1{
@@ -90,6 +89,8 @@ text-align: left;
 
 .a {
     display: flex;
+    display: inline-block;
+   
 }
 
 .uploading-image {
