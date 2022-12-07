@@ -59,6 +59,23 @@ public class JdbcAuctionDao implements AuctionDao{
         return auction;
     }
 
+
+    @Override
+    public void deleteAuctionById(int id){
+        // coding for deleting the individual auction
+        String sql = "DELETE FROM auction " +
+                     "WHERE auction_id = ?";
+        jdbcTemplate.update(sql,id);
+
+
+        //coding for deleting the bids associated with that auction.
+        sql = "DELETE FROM bid " +
+                "WHERE auction_id = ?";
+        jdbcTemplate.update(sql,id);
+    }
+
+
+
     private AuctionListDto mapRowToAuctionListDto(SqlRowSet rs) {
         AuctionListDto auctionListDto = new AuctionListDto();
         auctionListDto.setId(rs.getInt("auction_id"));
