@@ -5,6 +5,8 @@
       <div class="alert alert-danger" role="alert" v-if="registrationErrors">
         {{ registrationErrorMsg }}
       </div>
+      <div >
+      <div>
       <label for="username" class="sr-only">Username</label>
       <input
         type="text"
@@ -15,6 +17,8 @@
         required
         autofocus
       />
+      </div>
+      <div>
       <label for="password" class="sr-only">Password</label>
       <input
         type="password"
@@ -32,6 +36,44 @@
         v-model="user.confirmPassword"
         required
       />
+      </div>
+      <div>
+      <label for="name" class="sr-only">Name</label>
+      <input
+        type="text"
+        id="name"
+        class="form-control"
+        placeholder="Name"
+        v-model="user.name"
+        required
+        autofocus
+      />
+      </div>
+      <div>
+      <label for="address" class="sr-only">Address</label>
+      <input
+        type="text"
+        id="address"
+        class="form-control"
+        placeholder="Address"
+        v-model="user.address"
+        required
+        autofocus
+      />
+      </div>
+      <div>
+      <label for="phoneNumber" class="sr-only">PhoneNumber</label>
+      <input
+        type="text"
+        id="phoneNumber"
+        class="form-control"
+        placeholder="PhoneNumber"
+        v-model="user.phoneNumber"
+        required
+        autofocus
+      />
+      </div>
+      </div>
       <router-link :to="{ name: 'login' }">Have an account?</router-link>
       <button class="btn btn-lg btn-primary btn-block" type="submit">
         Create Account
@@ -51,6 +93,9 @@ export default {
         username: '',
         password: '',
         confirmPassword: '',
+        name: '',
+        address: '',
+        phoneNumber: '',
         role: 'user',
       },
       registrationErrors: false,
@@ -90,4 +135,7 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+
+
+</style>
