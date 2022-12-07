@@ -1,21 +1,22 @@
 <template>
 <div class = 'a'>
-<div>
+    <div>
 
-  <div class="card">
-      <h1 class="title"></h1>
+        <div class="card"
+            v-for="auction in auctions"
+            v-bind:key="auction.id"  
+        >
+            <h1 class="title">{{ auction.title }}</h1>
 <!-- 
       <div>
       <img src: previewImage class="uploading-image" />
       <input type="file" accept="image/png" @change=uploadImage>
     </div> -->
 
-      <p> Price: $</p>
-      <p> Details: </p>
-      <div>
-      <p class="seller"> Seller: </p>
-      </div> 
-  </div>
+            <p> Price: $</p>
+            <p> Details: </p>
+            <p class="seller"> Seller: </p>
+        </div>
 
   <!-- <div>
        <img href src: previewImage class="uploading-image" />
@@ -24,35 +25,24 @@
 
   </div>
 
-  <div class="card">
-      <h1 class="title">Example 2</h1>
-      <img style="width:200px" class="center" href src="../img/Bike.jpg">
-      <p> Price: $</p>
-      <p> Details: </p>
-      <div>
-      <p class="seller"> Seller: </p>
-      </div>
-  </div>
-
-  <div class="card">
-      <h1 class="title">Example 3</h1>
-      <img style="width:200px" class="center" href src="../img/Bike.jpg">
-      <p> Price: $</p>
-      <p> Details: </p>
-      <div>
-      <p class="seller"> Seller: </p>
-      </div>
-  </div>
+  
 </div>
 </template>
 
 <script>
+import auctionService from '../services/AuctionService';
 export default {
         name:'imageUpload',
         data(){
             return{
+                auctions: [],
                previewImage: null
             }
+        },
+        created() {
+            auctionService.getAuctions().then(response => {
+                this.auctions = response.data;
+            })
         },
         methods:{
             uploadImage(e){

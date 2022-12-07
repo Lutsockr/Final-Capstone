@@ -5,10 +5,10 @@ const http = axios.create({
 });
 
 export default {
-  getAuction(){
+  getAuctions(){
     return http.get('/auctions');
   },
-  getAuctionsById(auctionID){
+  getAuctionById(auctionID){
     return http.get(`/auctions/${auctionID}`)
   },
   
