@@ -15,6 +15,7 @@
             <img height="200px" v-bind:src="auction.imagePath" >
             <p> Price: $ {{ auction.startingPrice}}</p>
             <p class="seller"> Seller: {{auction.ownerName}} </p>
+            <button v-if="$store.state.token !== ''" onclick="window.location='http://www.example.com';"> Select </button>
         </div>
 
   <!-- <div>
