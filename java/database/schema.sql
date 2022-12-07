@@ -20,6 +20,7 @@ CREATE TABLE auction (
 	type_id int,
 	start_date timestamp,
 	end_date timestamp,
+	image_path varchar(200),
 	CONSTRAINT pk_auction PRIMARY KEY (auction_id)
 );
 
