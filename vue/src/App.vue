@@ -5,6 +5,7 @@
       <router-link v-bind:to="{ name: 'login' }" v-if="$store.state.token == ''">Login | </router-link>
       <router-link v-bind:to="{ name: 'register' }" v-if="$store.state.token == ''">Register</router-link>
       <router-link v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">Logout</router-link>
+      <router-link v-bind:to="{ name: 'create' }" v-if="$store.state.token != ''">Create Auction</router-link>
       
     </div>
     <router-view />
@@ -38,4 +39,6 @@
   background-color: #04AA6D;
   color: white;
 }
+
 </style>
+

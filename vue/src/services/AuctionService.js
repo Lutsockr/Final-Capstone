@@ -11,5 +11,8 @@ export default {
   getAuctionById(auctionID){
     return http.get(`/auctions/${auctionID}`)
   },
+  addAuction(auction) {
+    return http.post('/auctions', auction)
+  }
   
 }
