@@ -25,5 +25,8 @@ public class AuctionController {
         return dao.getAuctionById(id);
     }
 
+    @RequestMapping(path = "/auctions/{id}", method = RequestMethod.DELETE)
+    public void deleteAuctionById(@PathVariable int id) {dao.deleteAuctionById(id);}
+
 
 }

@@ -11,4 +11,7 @@ public interface AuctionDao {
 
     Auction getAuctionById(int id);
 
+    void deleteAuctionById(int id);
+
+
 }
