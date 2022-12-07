@@ -3,12 +3,12 @@
 <div>
 
   <div class="card">
-      <h1 class="title">Example 1</h1>
-
+      <h1 class="title"></h1>
+<!-- 
       <div>
       <img src: previewImage class="uploading-image" />
       <input type="file" accept="image/png" @change=uploadImage>
-    </div>
+    </div> -->
 
       <p> Price: $</p>
       <p> Details: </p>
@@ -17,10 +17,10 @@
       </div> 
   </div>
 
-  <div>
+  <!-- <div>
        <img href src: previewImage class="uploading-image" />
       <input type="file" accept="image/png" @change=uploadImage>
-  </div>
+  </div> -->
 
   </div>
 
