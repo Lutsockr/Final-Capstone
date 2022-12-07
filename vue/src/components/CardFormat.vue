@@ -2,19 +2,24 @@
 <div class = 'a'>
 <div>
 
-    <div>
-      <img src: previewImage class="uploading-image" />
-      <input type="file" accept="image/pdf" @change=uploadImage>
-    </div>
-
   <div class="card">
       <h1 class="title">Example 1</h1>
-      <img style="width:200px" class="center" href src="../img/Bike.jpg">
+
+      <div>
+      <img src: previewImage class="uploading-image" />
+      <input type="file" accept="image/png" @change=uploadImage>
+    </div>
+
       <p> Price: $</p>
       <p> Details: </p>
       <div>
       <p class="seller"> Seller: </p>
       </div> 
+  </div>
+
+  <div>
+       <img href src: previewImage class="uploading-image" />
+      <input type="file" accept="image/png" @change=uploadImage>
   </div>
 
   </div>
@@ -95,6 +100,13 @@ text-align: left;
 
 .a {
     display: flex;
+}
+
+.uploading-image {
+    display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }
 
 
