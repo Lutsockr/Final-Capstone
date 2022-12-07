@@ -1,12 +1,10 @@
 package com.techelevator.controller;
 
 import com.techelevator.dao.AuctionDao;
+import com.techelevator.model.Auction;
 import com.techelevator.model.AuctionListDto;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -20,6 +18,11 @@ public class AuctionController {
     @RequestMapping(path = "/auctions", method = RequestMethod.GET)
     public List<AuctionListDto> getAuctions() {
         return dao.getAll();
+    }
+
+    @RequestMapping(path = "/auctions/{id}", method = RequestMethod.GET)
+    public Auction getAuction(@PathVariable int id) {
+        return dao.getAuctionById(id);
     }
 
 
