@@ -16,6 +16,7 @@ public class JdbcAuctionDao implements AuctionDao{
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
+    private SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
     @Override
     public Auction createAuction(CreateAuctionDto dto) {
@@ -23,7 +24,6 @@ public class JdbcAuctionDao implements AuctionDao{
                 "image_path) " +
                 "VALUES (?,?,?,?,?,NOW()::timestamp,to_timestamp(?, 'YYYY-MM-DD HH24:MI:SS'),?) " +
                 "RETURNING auction_id";
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         int newId = jdbcTemplate.queryForObject(sql, int.class, dto.getOwnerId(), dto.getTitle(), dto.getDescription(),
                 dto.getStartingPrice(), dto.getAuctionTypeId(), dateFormat.format(dto.getEndDate()), dto.getImagePath());
         Auction createdAuction = getAuctionById(newId);
@@ -75,6 +75,16 @@ public class JdbcAuctionDao implements AuctionDao{
         }
         auction.setBids(bids);
         return auction;
+    }
+
+    @Override
+    public Auction updateAuction(UpdateAuctionDto dto) {
+        String sql = "UPDATE auction " +
+                "SET title = ?, description = ?, starting_price = ?, type_id = ?, end_date = to_timestamp(?, 'YYYY-MM-DD HH24:MI:SS'), image_path = ? " +
+                "WHERE auction_id = ?";
+        jdbcTemplate.update(sql, dto.getTitle(), dto.getDescription(), dto.getStartingPrice(),dto.getAuctionTypeId(),
+                dateFormat.format(dto.getEndDate()), dto.getImagePath(), dto.getId());
+        return getAuctionById(dto.getId());
     }
 
 
