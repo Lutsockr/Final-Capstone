@@ -9,8 +9,24 @@
       <input type="number" name="price" v-model="auction.price" />
     </div>
     <div class="field">
-      <label for="details">Details</label>
-      <input type="text" name="details" v-model="auction.details" /> 
+      <label for="description">Description</label>
+      <input type="text" name="description" v-model="auction.description" /> 
+    </div>
+    <div class="field">
+      <label for="startingPrice">Starting Price</label>
+      <input type="number" name="startingPrice" v-model="auction.startingPrice" />
+    </div>
+    <div class="field">
+      <label for="auctionType">Auction Type</label>
+      <input type="text" name="auctionType" v-model="auction.auctionType" />
+    </div>
+    <div class="field">
+      <label for="endDate">End Date</label>
+      <input type="datetime" name="endDate" v-model="auction.endDate" />
+    </div>
+    <div class="field">
+      <label for="imagePath">Image Url</label>
+      <input type="url" name="imagePath" v-model="auction.imagePath" />
     </div>
     <div class="actions">
       <button type="submit" v-on:click="saveAuction()">Save Auction</button>
@@ -22,13 +38,18 @@
 import auctionService from '../services/AuctionService';
 
 export default {
-  name: "create-topic",
+  name: "create-auction",
   data() {
     return {
       auction: {
         title: "",
         price: "",
-        details: "",
+        description: "",
+        startingPrice: 0,
+        auctionType: 0,
+        ownerId: 1,
+        endDate: Date,
+        imagePath: URL,
       }
     };
   },
