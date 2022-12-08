@@ -3,8 +3,7 @@
         <div class="a" v-bind:key="auction.id">
             <h1 class="title">Name of Item: {{ auction.title }}</h1>
             <h2>This auction will end in:</h2>
-            <h3> {{ timeRemaining.days + " Days, " + timeRemaining.hours + " Hours, and " +  timeRemaining.minutes + " Minutes."}} </h3>
-            <img height="200px" v-bind:src="auction.imagePath" >
+<h3 class = "remainingTime"> {{ timeRemaining.days + " Days, " + timeRemaining.hours + " Hours, and " +  timeRemaining.minutes + " Minutes."}} </h3>            <img height="200px" v-bind:src="auction.imagePath" >
             <p> Starting Bid Price: $ {{ auction.startingPrice}}</p>
             <p> Details: {{ auction.description }} </p>
             <p> Buyout Price: $ {{ auction.buyout }} </p>
@@ -85,6 +84,10 @@ export default {
     display: inline-block;
     justify-content: center;
     
+}
+.remainingTime{
+    font-style: italic;
+    color: red;
 }
 
 </style>
