@@ -12,11 +12,9 @@ VALUES (1,'Test Auction', 'This is a test auction', 0.01, 1, NOW(), '2022-12-16 
        (1,'Test Auction #2', 'This is another test auction', 0.02, 1, NOW(), '2022-12-16 11:31:00', 'https://images.pexels.com/photos/209339/pexels-photo-209339.jpeg'),
        (1,'Test Auction #3', 'This is yet, another test auction', 0.03, 1, NOW(), '2022-12-16 11:32:00', 'https://images.pexels.com/photos/61127/pexels-photo-61127.jpeg');
 
+INSERT INTO bid (auction_id, user_id, amount) VALUES (1, 4, 200.00);
 INSERT INTO bid (auction_id, user_id, amount) VALUES (1, 3, 300.00);
-INSERT INTO bid (auction_id, user_id, amount) VALUES (1, 4, 400.00);
-INSERT INTO bid (auction_id, user_id, amount) VALUES (2, 3, 400.00);
-INSERT INTO bid (auction_id, user_id, amount) VALUES (2, 4, 500.00);
-INSERT INTO bid (auction_id, user_id, amount) VALUES (3, 4, 500.00);
-INSERT INTO bid (auction_id, user_id, amount) VALUES (3, 3, 600.00);
+INSERT INTO bid (auction_id, user_id, amount) VALUES (2, 3, 300.00);
+INSERT INTO bid (auction_id, user_id, amount) VALUES (2, 4, 400.00);
 
 COMMIT TRANSACTION;
