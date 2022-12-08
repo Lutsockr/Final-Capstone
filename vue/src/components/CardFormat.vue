@@ -7,8 +7,8 @@
             <img height="200px" v-bind:src="auction.imagePath" >
             <p> Price: $ {{ auction.startingPrice}}</p>
             <p class="seller"> Seller: {{auction.ownerName}} </p>
-            <button>
-                <router-link v-bind:to="{name: auction, params: {id: auction.id}}"> Select </router-link>
+            <button v-if="$store.state.token !== ''">
+                <router-link v-bind:to="{name: 'auction', params: {id: auction.id}}" > Select </router-link>
             </button>
         </div>
   </div>
