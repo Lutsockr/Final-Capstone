@@ -55,7 +55,7 @@ const router = new Router({
       }
     },
     {
-      path: "/auction",
+      path: "/auctions/:id",
       name: "auction",
       component: Auction,
       meta: {
