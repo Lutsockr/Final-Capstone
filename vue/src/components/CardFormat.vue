@@ -8,9 +8,8 @@
             <p> Price: $ {{ auction.startingPrice}}</p>
             <p class="seller"> Seller: {{auction.ownerName}} </p>
             <button>
-                <router-link to="/auction"> Select </router-link>
+                <router-link v-bind:to="{name: auction, params: {id: auction.id}}"> Select </router-link>
             </button>
-            <button v-if="$store.state.token == ''" onclick="window.location='http://www.example.com';"> Select </button>
         </div>
   </div>
 
@@ -22,6 +21,7 @@
 import auctionService from '../services/AuctionService';
 export default {
         name:'imageUpload',
+     
         data(){
             return{
                 auctions: [],

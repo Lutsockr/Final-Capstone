@@ -1,12 +1,12 @@
 <template>
   <div>
-        <div class="a" v-bind:key="auctions.id">
-            <h1 class="title">{{ auctions.title }}</h1>
-            <img height="200px" v-bind:src="auctions.imagePath" >
-            <p> Price: $ {{ auctions.startingPrice}}</p>
-            <p> Details: {{ auctions.details }} </p>
-            <p> Buyout Price: $ {{ auctions.buyout }} </p>
-            <p class="seller"> Seller: {{auctions.ownerName}} </p>
+        <div class="a" v-bind:key="auction.id">
+            <h1 class="title">{{ auction.title }}</h1>
+            <img height="200px" v-bind:src="auction.imagePath" >
+            <p> Price: $ {{ auction.startingPrice}}</p>
+            <p> Details: {{ auction.details }} </p>
+            <p> Buyout Price: $ {{ auction.buyout }} </p>
+            <p class="seller"> Seller: {{auction.ownerName}} </p>
         </div>
   </div>
 </template>
@@ -16,15 +16,23 @@ import auctionService from '../services/AuctionService'
 
 export default {
     name: "individual-auction",
+       props: {
+            'auctionId' : Number
+        },
     data(){
             return{
-                auctions: [],
+                auction: {
+                   
+
+
+
+                },
                 previewImage: null
             }
         },
     created() {
-        auctionService.getAuctions().then(response => {
-            this.auctions = response.data;
+        auctionService.getAuctionById(this.$route.params.id).then(response => {
+            this.auction = response.data;
         })
     },
 }
