@@ -6,7 +6,9 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Component;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Component
@@ -16,9 +18,23 @@ public class JdbcAuctionDao implements AuctionDao{
     private JdbcTemplate jdbcTemplate;
 
     @Override
-    public List<AuctionListDto> getAll() {
-        List<AuctionListDto> auctions = new ArrayList<>();
-        String sql = "SELECT auction.auction_id, title, MAX(users.username) AS username, image_path, starting_price, end_date, MAX(bid.amount) AS highest_bid " +
+    public Auction createAuction(CreateAuctionDto dto) {
+        String sql = "INSERT INTO auction (owner_id, title, description, starting_price, type_id, start_date, end_date, " +
+                "image_path) " +
+                "VALUES (?,?,?,?,?,NOW()::timestamp,to_timestamp(?, 'YYYY-MM-DD HH24:MI:SS'),?) " +
+                "RETURNING auction_id";
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        int newId = jdbcTemplate.queryForObject(sql, int.class, dto.getOwnerId(), dto.getTitle(), dto.getDescription(),
+                dto.getStartingPrice(), dto.getAuctionTypeId(), dateFormat.format(dto.getEndDate()), dto.getImagePath());
+        Auction createdAuction = getAuctionById(newId);
+        return createdAuction;
+    }
+
+    @Override
+    public List<ListAuctionDto> getAll() {
+        List<ListAuctionDto> auctions = new ArrayList<>();
+        String sql = "SELECT auction.auction_id, title, MAX(users.username) AS username, image_path, starting_price, " +
+                "end_date, MAX(bid.amount) AS highest_bid " +
                 "FROM auction " +
                 "JOIN users ON owner_id = users.user_id " +
                 "LEFT JOIN bid ON auction.auction_id = bid.auction_id " +
@@ -78,16 +94,16 @@ public class JdbcAuctionDao implements AuctionDao{
 
 
 
-    private AuctionListDto mapRowToAuctionListDto(SqlRowSet rs) {
-        AuctionListDto auctionListDto = new AuctionListDto();
-        auctionListDto.setId(rs.getInt("auction_id"));
-        auctionListDto.setTitle(rs.getString("title"));
-        auctionListDto.setOwnerName(rs.getString("username"));
-        auctionListDto.setImagePath(rs.getString("image_path"));
-        auctionListDto.setStartingPrice(rs.getBigDecimal("starting_price"));
-        auctionListDto.setHighestBid(rs.getBigDecimal("highest_bid"));
-        auctionListDto.setEndDate(rs.getTimestamp("end_date"));
-        return auctionListDto;
+    private ListAuctionDto mapRowToAuctionListDto(SqlRowSet rs) {
+        ListAuctionDto listAuctionDto = new ListAuctionDto();
+        listAuctionDto.setId(rs.getInt("auction_id"));
+        listAuctionDto.setTitle(rs.getString("title"));
+        listAuctionDto.setOwnerName(rs.getString("username"));
+        listAuctionDto.setImagePath(rs.getString("image_path"));
+        listAuctionDto.setStartingPrice(rs.getBigDecimal("starting_price"));
+        listAuctionDto.setHighestBid(rs.getBigDecimal("highest_bid"));
+        listAuctionDto.setEndDate(rs.getTimestamp("end_date"));
+        return listAuctionDto;
     }
 
     private Bid mapRowToBid(SqlRowSet rs) {
@@ -107,7 +123,7 @@ public class JdbcAuctionDao implements AuctionDao{
         AuctionType auctionType = new AuctionType();
         auction.setId(rs.getInt("auction_id"));
         owner.setId(rs.getInt("owner_id"));
-        owner.setUsername("owner_username");
+        owner.setUsername(rs.getString("owner_username"));
         auction.setOwner(owner);
         auction.setTitle(rs.getString("title"));
         auction.setDescription(rs.getString("description"));

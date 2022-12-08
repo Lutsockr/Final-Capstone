@@ -2,7 +2,8 @@ package com.techelevator.controller;
 
 import com.techelevator.dao.AuctionDao;
 import com.techelevator.model.Auction;
-import com.techelevator.model.AuctionListDto;
+import com.techelevator.model.CreateAuctionDto;
+import com.techelevator.model.ListAuctionDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,8 +16,13 @@ public class AuctionController {
     @Autowired
     private AuctionDao dao;
 
+    @RequestMapping(path = "/auctions", method = RequestMethod.POST)
+    public Auction createAuction(@RequestBody CreateAuctionDto dto) {
+        return dao.createAuction(dto);
+    }
+
     @RequestMapping(path = "/auctions", method = RequestMethod.GET)
-    public List<AuctionListDto> getAuctions() {
+    public List<ListAuctionDto> getAuctions() {
         return dao.getAll();
     }
 
