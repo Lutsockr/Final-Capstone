@@ -21,7 +21,7 @@ public class JdbcAuctionDao implements AuctionDao{
         String sql = "SELECT auction.auction_id, title, MAX(users.username) AS username, image_path, starting_price, end_date, MAX(bid.amount) AS highest_bid " +
                 "FROM auction " +
                 "JOIN users ON owner_id = users.user_id " +
-                "JOIN bid ON auction.auction_id = bid.auction_id " +
+                "LEFT JOIN bid ON auction.auction_id = bid.auction_id " +
                 "GROUP BY auction.auction_id";
 
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
