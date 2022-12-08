@@ -2,27 +2,16 @@
 <div class = 'a'>
     <div>
 
-        <div class="card a"
-            v-for="auction in auctions"
-            v-bind:key="auction.id"  
-        >
+        <div class="card a" v-for="auction in auctions" v-bind:key="auction.id">
             <h1 class="title">{{ auction.title }}</h1>
-<!-- 
-      <div>
-      <img src: previewImage class="uploading-image" />
-      <input type="file" accept="image/png" @change=uploadImage>
-    </div> -->
             <img height="200px" v-bind:src="auction.imagePath" >
             <p> Price: $ {{ auction.startingPrice}}</p>
             <p class="seller"> Seller: {{auction.ownerName}} </p>
-            <button v-if="$store.state.token !== ''" onclick="window.location='http://www.example.com';"> Select </button>
+            <button>
+                <router-link to="/auction"> Select </router-link>
+            </button>
+            <button v-if="$store.state.token == ''" onclick="window.location='http://www.example.com';"> Select </button>
         </div>
-
-  <!-- <div>
-       <img href src: previewImage class="uploading-image" />
-      <input type="file" accept="image/png" @change=uploadImage>
-  </div> -->
-
   </div>
 
   
