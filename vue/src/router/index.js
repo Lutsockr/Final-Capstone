@@ -4,6 +4,7 @@ import Home from '../views/Home.vue'
 import Login from '../views/Login.vue'
 import Logout from '../views/Logout.vue'
 import Register from '../views/Register.vue'
+import Auction from '../views/Auction.vue'
 import store from '../store/index'
 import NewAuction from '../views/NewAuction.vue'
 
@@ -60,6 +61,14 @@ const router = new Router({
       component: NewAuction,
       meta: {
         requiresAuth: true
+      }
+    },
+    {
+      path: "/auctions/:id",
+      name: "auction",
+      component: Auction,
+      meta: {
+        requiresAuth: false
       }
     }
     

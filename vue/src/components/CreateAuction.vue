@@ -22,7 +22,7 @@
     </div>
     <div class="field">
       <label for="endDate">End Date</label>
-      <input type="datetime" name="endDate" v-model="auction.endDate" />
+      <input type="datetime-local" name="endDate" v-model="auction.endDate" />
     </div>
     <div class="field">
       <label for="imagePath">Image Url</label>
@@ -48,8 +48,8 @@ export default {
         startingPrice: 0,
         auctionType: 0,
         ownerId: 1,
-        endDate: Date,
-        imagePath: URL,
+        endDate: "",
+        imagePath: "",
       }
     };
   },
