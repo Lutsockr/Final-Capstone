@@ -18,9 +18,11 @@ public class JdbcAuctionDao implements AuctionDao{
     @Override
     public List<AuctionListDto> getAll() {
         List<AuctionListDto> auctions = new ArrayList<>();
-        String sql = "SELECT auction_id, title, users.username, image_path, starting_price, end_date " +
+        String sql = "SELECT auction.auction_id, title, MAX(users.username) AS username, image_path, starting_price, end_date, MAX(bid.amount) AS highest_bid " +
                 "FROM auction " +
-                "JOIN users ON owner_id = users.user_id";
+                "JOIN users ON owner_id = users.user_id " +
+                "JOIN bid ON auction.auction_id = bid.auction_id " +
+                "GROUP BY auction.auction_id";
 
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
         while (results.next()) {
@@ -83,6 +85,7 @@ public class JdbcAuctionDao implements AuctionDao{
         auctionListDto.setOwnerName(rs.getString("username"));
         auctionListDto.setImagePath(rs.getString("image_path"));
         auctionListDto.setStartingPrice(rs.getBigDecimal("starting_price"));
+        auctionListDto.setHighestBid(rs.getBigDecimal("highest_bid"));
         auctionListDto.setEndDate(rs.getTimestamp("end_date"));
         return auctionListDto;
     }

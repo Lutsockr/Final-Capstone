@@ -10,17 +10,19 @@ public class AuctionListDto {
     private String ownerName;
     private String imagePath;
     private BigDecimal startingPrice;
+    private BigDecimal highestBid;
     private Date endDate;
 
     public AuctionListDto() {
     }
 
-    public AuctionListDto(int id, String title, String ownerName, String imagePath, BigDecimal startingPrice, Date endDate) {
+    public AuctionListDto(int id, String title, String ownerName, String imagePath, BigDecimal startingPrice, BigDecimal highestBid, Date endDate) {
         this.id = id;
         this.title = title;
         this.ownerName = ownerName;
         this.imagePath = imagePath;
         this.startingPrice = startingPrice;
+        this.highestBid = highestBid;
         this.endDate = endDate;
     }
 
@@ -70,6 +72,14 @@ public class AuctionListDto {
 
     public void setEndDate(Date endDate) {
         this.endDate = endDate;
+    }
+
+    public BigDecimal getHighestBid() {
+        return highestBid;
+    }
+
+    public void setHighestBid(BigDecimal highestBid) {
+        this.highestBid = highestBid;
     }
 
     @Override
