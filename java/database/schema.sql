@@ -15,7 +15,7 @@ CREATE TABLE auction (
 	owner_id int,
 	title varchar(50),
 	description varchar(400),
-	starting_price money,
+	starting_price numeric,
 	winning_bid_id int,
 	type_id int,
 	start_date timestamp,
@@ -34,7 +34,7 @@ CREATE TABLE bid (
 	bid_id SERIAL,
 	auction_id int,
 	user_id int,
-	amount money,
+	amount numeric,
 	CONSTRAINT pk_bid PRIMARY KEY (bid_id)
 );
 
