@@ -3,7 +3,7 @@ package com.techelevator.model;
 import java.math.BigDecimal;
 import java.util.Date;
 
-public class AuctionListDto {
+public class ListAuctionDto {
 
     private int id;
     private String title;
@@ -13,10 +13,10 @@ public class AuctionListDto {
     private BigDecimal highestBid;
     private Date endDate;
 
-    public AuctionListDto() {
+    public ListAuctionDto() {
     }
 
-    public AuctionListDto(int id, String title, String ownerName, String imagePath, BigDecimal startingPrice, BigDecimal highestBid, Date endDate) {
+    public ListAuctionDto(int id, String title, String ownerName, String imagePath, BigDecimal startingPrice, BigDecimal highestBid, Date endDate) {
         this.id = id;
         this.title = title;
         this.ownerName = ownerName;
