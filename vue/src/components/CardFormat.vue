@@ -13,6 +13,9 @@
             <button>
                 <router-link v-bind:to="{name: 'update', params: {id: auction.id}}" >Edit</router-link>
             </button>
+               <button v-if="$store.state.token !== ''">
+              <a href="#" v-on:click="deleteAuction(auction.id)" onClick="window.location.reload()">Delete</a>
+              </button>
         </div>
   </div>
 
@@ -37,15 +40,13 @@ export default {
             })
         },
         methods:{
-            uploadImage(e){
-                const image = e.target.files[0];
-                const reader = new FileReader();
-                reader.readAsDataURL(image);
-                reader.onload = e =>{
-                    this.previewImage = e.target.result;
-                    console.log(this.previewImage);
-                };
-            }
+            deleteAuction(id) {
+      auctionService.deleteAuction(id).then(response =>{
+        if(response.status === 200){
+        this.getAuctions();
+        }
+      })
+    }
         }
      }  // missing closure added
 </script>
