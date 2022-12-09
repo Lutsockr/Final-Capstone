@@ -5,10 +5,6 @@
       <input type="text" name="title" v-model="auction.title" />
     </div>
     <div class="field">
-      <label for="price">Price</label>
-      <input type="number" name="price" v-model="auction.price" />
-    </div>
-    <div class="field">
       <label for="description">Description</label>
       <input type="text" name="description" v-model="auction.description" /> 
     </div>
@@ -29,7 +25,7 @@
       <input type="url" name="imagePath" v-model="auction.imagePath" />
     </div>
     <div class="actions">
-      <button type="submit" v-on:click="saveAuction()">Save Auction</button>
+      <button type="submit" v-on:click="updateThisAuction()">Save Auction</button>
     </div>
   </form>
 </template>
@@ -44,7 +40,6 @@ export default {
     return {
       auction: {
         title: "",
-        price: "",
         description: "",
         startingPrice: 0,
         auctionType: 0,
@@ -64,6 +59,18 @@ export default {
         
       })
     }
+  },
+  created() {
+    auctionService.getAuctionById(this.auctionID).then(response => {
+      this.title = response.data.title;
+      this.description = response.data.description;
+      this.startingPrice = response.data.startingPrice;
+      this.auctionType = response.data.auctionType;
+      this.ownerId = response.data.ownerId;
+      this.endDate = response.data.endDate;
+      this.imagePath = response.data.imagePath;
+    })
+    
   }
 };
 </script>
