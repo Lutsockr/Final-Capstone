@@ -10,11 +10,11 @@
     </div>
     <div class="field">
       <label for="startingPrice">Starting Price</label>
-      <input type="number" name="startingPrice" v-model="auction.startingPrice" />
+      <input type="text" name="startingPrice" v-model="auction.startingPrice" />
     </div>
     <div class="field">
       <label for="auctionType">Auction Type</label>
-      <input type="text" name="auctionType" v-model="auction.auctionType" />
+      <input type="text" name="typeId" v-model="auction.auctionType.id" />
     </div>
     <div class="field">
       <label for="endDate">End Date</label>
