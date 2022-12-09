@@ -10,6 +10,9 @@
             <button v-if="$store.state.token !== ''">
                 <router-link v-bind:to="{name: 'auction', params: {id: auction.id}}" > Select </router-link>
             </button>
+            <button>
+                <router-link v-bind:to="{name: 'update', params: {id: auction.id}}" >Edit</router-link>
+            </button>
         </div>
   </div>
 

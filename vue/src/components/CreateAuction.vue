@@ -5,10 +5,6 @@
       <input type="text" name="title" v-model="auction.title" />
     </div>
     <div class="field">
-      <label for="price">Price</label>
-      <input type="number" name="price" v-model="auction.price" />
-    </div>
-    <div class="field">
       <label for="description">Description</label>
       <input type="text" name="description" v-model="auction.description" /> 
     </div>
@@ -43,7 +39,6 @@ export default {
     return {
       auction: {
         title: "",
-        price: "",
         description: "",
         startingPrice: 0,
         auctionType: 0,
