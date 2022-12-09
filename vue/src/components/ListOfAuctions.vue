@@ -7,8 +7,19 @@
 
 <script>
 import CardFormat from './CardFormat.vue'
+import AuctionService from '../services/AuctionService'
 export default {
   components: { CardFormat },
+  methods: {
+     deleteTopic(id) {
+      AuctionService.deleteAuction(id).then(response =>{
+        if(response.status === 200){
+        this.getAuctions();
+        }
+      })
+    }
+
+  }
 
 
 }

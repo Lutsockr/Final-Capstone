@@ -17,8 +17,8 @@ export default {
   updateAuction(auctionID, auction) {
     return http.put(`/auctions/${auctionID}`, auction)
   },
-  deleteAuction(auctionID) {
-    return http.delete(`/auctions/${auctionID}`)
+  deleteAuction(id) {
+    return http.delete(`/auctions/${id}`)
   }
   
 }
