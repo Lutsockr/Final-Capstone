@@ -51,8 +51,7 @@ export default {
   },
   methods: {
     updateThisAuction() {
-        const auction = {id: this.auctionID, auction: this.auction}
-      auctionService.updateAuction(auction.id, auction).then(response => {
+      auctionService.updateAuction(this.$route.params.id, this.auction).then(response => {
           if(response.status === 200) {
             this.$router.push({ name: 'home'});
           }
@@ -61,14 +60,8 @@ export default {
     }
   },
   created() {
-    auctionService.getAuctionById(this.auctionID).then(response => {
-      this.title = response.data.title;
-      this.description = response.data.description;
-      this.startingPrice = response.data.startingPrice;
-      this.auctionType = response.data.auctionType;
-      this.ownerId = response.data.ownerId;
-      this.endDate = response.data.endDate;
-      this.imagePath = response.data.imagePath;
+    auctionService.getAuctionById(this.$route.params.id).then(response => {
+            this.auction = response.data;
     })
     
   }
