@@ -3,7 +3,7 @@
         <div class="a" v-bind:key="auction.id">
             <h1 class="title">Name of Item: {{ auction.title }}</h1>
             <h2>This auction will end in:</h2>
-<h3> {{ timeRemaining.returnDifference + " Days and " + timeRemaining.returnDifferenceFloored + " Hours" }} </h3>
+            <h3 class = "remainingTime"> {{ timeRemaining.days + " Days, " + timeRemaining.hours + " Hours, " +  timeRemaining.minutes + " Minutes, and " + timeRemaining.seconds + " Seconds."}} </h3>  
             <img height="200px" v-bind:src="auction.imagePath" >
             <p> Starting Bid Price: $ {{ auction.startingPrice}}</p>
             <p> Details: {{ auction.description }} </p>
@@ -11,8 +11,8 @@
             <p class="seller"> Seller: {{auction.owner.username}} </p>
             <table>
             <tr> 
-                <th>Bidder</th>
-                <th>Bid Amount</th>
+                <th>Bidder:</th>
+                <th>Bid Amount:</th>
             </tr>
             <tr v-for="bid in auction.bids" v-bind:key="bid.id">
                     <td> {{bid.username}} </td>
@@ -57,16 +57,22 @@ export default {
     },
     computed: {
         timeRemaining(){
+
             var endDate = new Date(this.auction.endDate).getTime();
-            var startDate = new Date(this.auction.startDate).getTime();
-            var difference = (Math.abs(endDate - startDate) / (1000*60*60*24));
-            var returnDifference = Math.floor(difference);
-            var returnDifferenceFloored = ((difference - Math.floor(difference)) * 24).toFixed(2);
-            let daysWord = "Days";
-            let hoursWord = "Hours";
+            var currentDate = Date.now();
+            var days = Math.floor((endDate - currentDate) / (1000*60*60*24));
+                var toHours = ((endDate - currentDate) / (1000*60*60*24)).toFixed(100);
+            var hours = Math.floor((toHours - Math.floor(toHours)) * 24);
+                var toMinutes = ((toHours - Math.floor(toHours)) * 24).toFixed(100);
+            var minutes = Math.floor((toMinutes - Math.floor(toMinutes)) * 60);
+                var toSeconds = ((toMinutes - Math.floor(toMinutes)) * 60).toFixed(100);
+            var seconds = Math.floor((toSeconds - Math.floor(toSeconds)) * 60);
+
             return {
-                returnDifference, daysWord,
-                returnDifferenceFloored, hoursWord
+                days,
+                hours,
+                minutes,
+                seconds
             }
         }
     }
@@ -81,5 +87,11 @@ export default {
     justify-content: center;
     
 }
+.remainingTime{
+    font-style: italic;
+    color: red;
+}
+
+
 
 </style>
