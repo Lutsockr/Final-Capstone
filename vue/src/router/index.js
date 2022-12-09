@@ -7,6 +7,7 @@ import Register from '../views/Register.vue'
 import Auction from '../views/Auction.vue'
 import store from '../store/index'
 import NewAuction from '../views/NewAuction.vue'
+import UpdateAuction from '../views/UpdateAuction.vue'
 
 Vue.use(Router)
 
@@ -71,7 +72,14 @@ const router = new Router({
         requiresAuth: false
       }
     },
-    
+    {
+      path: "/auctions/:id/edit",
+      name: "update",
+      component: UpdateAuction,
+      meta: {
+        requiresAuth: true
+      }
+    }
     
   ]
 })

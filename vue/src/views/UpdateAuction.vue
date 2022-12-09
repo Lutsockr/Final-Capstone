@@ -1,5 +1,5 @@
 <template>
-    <div class="auctionUpdate">
+    <div class="Update-Auction">
         <update-auction />
     </div>
 </template>
