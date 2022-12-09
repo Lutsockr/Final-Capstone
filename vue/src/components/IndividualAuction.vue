@@ -3,7 +3,8 @@
         <div class="a" v-bind:key="auction.id">
             <h1 class="title">Name of Item: {{ auction.title }}</h1>
             <h2>This auction will end in:</h2>
-<h3 class = "remainingTime"> {{ timeRemaining.days + " Days, " + timeRemaining.hours + " Hours, and " +  timeRemaining.minutes + " Minutes."}} </h3>            <img height="200px" v-bind:src="auction.imagePath" >
+            <h3 class = "remainingTime"> {{ timeRemaining.days + " Days, " + timeRemaining.hours + " Hours, " +  timeRemaining.minutes + " Minutes, and " + timeRemaining.seconds + " Seconds."}} </h3>  
+            <img height="200px" v-bind:src="auction.imagePath" >
             <p> Starting Bid Price: $ {{ auction.startingPrice}}</p>
             <p> Details: {{ auction.description }} </p>
             <p> Buyout Price: $ {{ auction.buyout }} </p>
@@ -56,21 +57,22 @@ export default {
     },
     computed: {
         timeRemaining(){
+
             var endDate = new Date(this.auction.endDate).getTime();
             var currentDate = Date.now();
-            
-            var differenceInTime = (Math.abs(endDate - currentDate) / (1000*60*60*24));
+            var days = Math.floor((endDate - currentDate) / (1000*60*60*24));
+                var toHours = ((endDate - currentDate) / (1000*60*60*24)).toFixed(100);
+            var hours = Math.floor((toHours - Math.floor(toHours)) * 24);
+                var toMinutes = ((toHours - Math.floor(toHours)) * 24).toFixed(100);
+            var minutes = Math.floor((toMinutes - Math.floor(toMinutes)) * 60);
+                var toSeconds = ((toMinutes - Math.floor(toMinutes)) * 60).toFixed(100);
+            var seconds = Math.floor((toSeconds - Math.floor(toSeconds)) * 60);
 
-            var days = Math.floor(differenceInTime);
-            var toMinutes = ((differenceInTime - Math.floor(differenceInTime)) * 24).toFixed(2);
-            var hours = Math.floor((differenceInTime - Math.floor(differenceInTime)) * 24);
-            var minutes = (toMinutes - Math.floor(toMinutes)).toFixed(1) * 60;
-            
             return {
                 days,
                 hours,
-                minutes
-                
+                minutes,
+                seconds
             }
         }
     }
@@ -89,5 +91,7 @@ export default {
     font-style: italic;
     color: red;
 }
+
+
 
 </style>
