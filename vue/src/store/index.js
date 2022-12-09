@@ -18,6 +18,7 @@ if(currentToken != null) {
 
 export default new Vuex.Store({
   state: {
+    auctions: {},
     token: currentToken || '',
     user: currentUser || {}
   },
@@ -37,6 +38,9 @@ export default new Vuex.Store({
       state.token = '';
       state.user = {};
       axios.defaults.headers.common = {};
+    },
+    SET_AUCTIONS(state, data) {
+      state.auctions = data;
     }
   }
 })
