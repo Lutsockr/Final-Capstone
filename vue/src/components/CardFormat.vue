@@ -11,16 +11,21 @@
             <p  class = "remainingTime"> {{ auction.title }} Closes</p>
 
             <p> Price: $ {{ auction.startingPrice}}</p>
+            
             <p class="seller"> Seller: {{auction.ownerName}} </p>
+
             <button v-if="$store.state.token !== ''">
                 <router-link v-bind:to="{name: 'auction', params: {id: auction.id}}" > Select </router-link>
             </button>
+
             <button>
                 <router-link v-bind:to="{name: 'update', params: {id: auction.id}}" >Edit</router-link>
             </button>
+
                <button v-if="$store.state.token !== ''">
               <a href="#" v-on:click="deleteAuction(auction.id)" onClick="window.location.reload()">Delete</a>
               </button>
+
         </div>
   </div>
 
@@ -81,14 +86,14 @@ export default {
 <style>
 
 .uploading-image{
-     display:flex;
-   }
+    display:flex;
+}
 
 .card{
-   border-radius: 10px;
+    border-radius: 10px;
     border: 2px solid black;
     width: auto;
-    height: 400px;
+    height: auto;
     margin: 20px;
     background-color: aqua;
     
@@ -97,15 +102,15 @@ h1{
     text-align: center;
 }
 .seller{
-text-align: left;
+    text-align: left;
 
 
 }
 .center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;   
 }
 
 .a {
@@ -116,9 +121,9 @@ text-align: left;
 
 .uploading-image {
     display: flex;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
 }
 
 
