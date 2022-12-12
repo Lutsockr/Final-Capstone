@@ -94,7 +94,8 @@ export default {
     width: auto;
     height: auto;
     margin: 20px;
-    background-color: aqua;
+    background-color: #333;
+    color: white;
     
 }
 h1{
