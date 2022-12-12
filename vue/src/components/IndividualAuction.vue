@@ -9,7 +9,7 @@
             <p> Details: {{ auction.description }} </p>
             <p> Buyout Price: $ {{ auction.buyout }} </p>
             <p class="seller"> Seller: {{auction.owner.username}} </p>
-            <create-bid />
+            <create-bid v-bind:auctionId="auction.id" />
             <table>
             <tr> 
                 <th>Bidder:</th>

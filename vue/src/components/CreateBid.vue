@@ -1,24 +1,50 @@
 <template>
   <div class="create-bid">
-      <button>Bid +$1</button>
-      <button>Bid +$5</button>
-      <button>Bid +$10</button>
-      <button>Bid +$20</button>
+      <button v-on:click="createBid(1)">Bid +$1</button>
+      <button v-on:click="createBid(5)">Bid +$5</button>
+      <button v-on:click="createBid(10)">Bid +$10</button>
+      <button v-on:click="createBid(20)">Bid +$20</button>
   </div>
 </template>
 
 <script>
-//import bidService from '../services/BidService'
+import bidService from '../services/BidService'
 
 export default {
     name: "create-bid",
+    props: {
+            'auctionId' : Number
+        },
     data() {
         return {
-            bid: {
-                "auctionId": 0,
-                "userId": 0,
-                "bidAmount": 0
-            }
+            bidAmount: 0
+        }
+    },
+    methods: {
+        createBid(amount) {
+            bidService.getHighestBidAmountByAuctionId(this.auctionId).then(response => { // this part is fucked
+                if(response.status == 200) {
+                    this.bidAmount = response.data + amount;
+                    let bid = {};
+                    bid["auctionId"] = this.auctionId;
+                    bid["userId"] = 1;
+                    bid["bidAmount"] = parseFloat(this.bidAmount);
+                    bidService.placeBid(bid).then(response => {
+                        if(response.status == 201) {
+                            alert('Bid placed Successfully!');
+                         window.location.reload();
+                        }
+                        else {
+                            alert('Something Went Wrong!');
+                            window.location.reload();
+                        }
+            })
+                }
+                else {
+                    alert('Something Went Wrong!');
+                    window.location.reload();
+                }
+            });
         }
     }
 }
