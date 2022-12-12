@@ -9,6 +9,7 @@
             <p> Details: {{ auction.description }} </p>
             <p> Buyout Price: $ {{ auction.buyout }} </p>
             <p class="seller"> Seller: {{auction.owner.username}} </p>
+            <create-bid />
             <table>
             <tr> 
                 <th>Bidder:</th>
@@ -33,8 +34,12 @@
 
 <script>
 import auctionService from '../services/AuctionService'
+import createBid from '../components/CreateBid.vue'
 
 export default {
+    components: {
+        'create-bid': createBid
+    },
     name: "individual-auction",
        props: {
             'auctionId' : Number
