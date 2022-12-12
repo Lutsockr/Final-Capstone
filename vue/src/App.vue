@@ -6,6 +6,7 @@
       <router-link v-bind:to="{ name: 'register' }" v-if="$store.state.token == ''">Register</router-link>
       <router-link v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">Logout</router-link>
       <router-link v-bind:to="{ name: 'create' }" v-if="$store.state.token != ''">Create Auction</router-link>
+      <router-link v-bind:to="{ name: 'bids' }" v-if="$store.state.token != ''">Bids</router-link>
       
     </div>
     <router-view />
@@ -15,6 +16,7 @@
 <style scoped>
 .topnav {
   background-color: #333;
+  box-shadow: 5px 5px;
   overflow: hidden;
   width: 100vw;
 }
@@ -68,12 +70,45 @@
   100% {
     background: #ff0000;
   }
+
 }
-html {
-  animation: colorChange 40s;
+@keyframes textColorChange {
+  0% {
+    color: lime;
+  }
+  14% {
+    color: cyan;
+  }
+  28% {
+    color: #0000ff;
+  }
+  42% {
+    color: #4b0082;
+  }
+  56% {
+    color: #ff0000;
+  }
+  70% {
+    color: #ffa500;
+  }
+  84% {
+    color: #ffff00;
+  }
+  100% {
+    color: lime;
+  }
+
+}
+div.topnav {
+  animation: colorChange 20s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
   animation-play-state: running;
-
+}
+div.topnav a{
+  animation: textColorChange 20s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
 }
 </style>

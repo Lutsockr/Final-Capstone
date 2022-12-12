@@ -14,7 +14,10 @@ export default {
     },
 
     getBidsByUserId(userId) {
-        return http.get(`/bids/user/{userId}`)
+        return http.get(`/bids/user/${userId}`)
+    },
+    deleteBidById(bidId) {
+        return http.delete(`/bids/${bidId}`)
     }
 
 }
