@@ -41,3 +41,38 @@
 }
 
 </style>
+<style>
+@keyframes colorChange {
+  0% {
+    background: #ff0000;
+  }
+  14% {
+    background: #ffa500;
+  }
+  28% {
+    background: #ffff00;
+  }
+  42% {
+    background: lime;
+  }
+  56% {
+    background: cyan;
+  }
+  70% {
+    background: #0000ff;
+  }
+  84% {
+    background: #4b0082;
+  }
+  100% {
+    background: #ff0000;
+  }
+}
+html {
+  animation: colorChange 40s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+
+}
+</style>
