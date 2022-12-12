@@ -1,4 +1,5 @@
 <template>
+<div>
   <form v-on:submit.prevent>
     <div class="field">
       <label for="title">Title </label>
@@ -27,7 +28,12 @@
     <div class="actions">
       <button type="submit" v-on:click="saveAuction()">Save Auction</button>
     </div>
+   
   </form>
+  <div class="logo">
+   <img   src="../img/Ben.png" />
+  </div>
+</div>
 </template>
 
 <script> 
@@ -63,12 +69,22 @@ export default {
 <style>
 div.field{
   padding: 10px;
+  
 }
 form{
   justify-content: center;
-  border-color: cornflowerblue;
+  border-color: #344;
   border-radius: 10px;
   border-style: solid;
-  background-color: cornflowerblue;
+  background-color:  #333;
+  margin: 20px;
+  color: white;
+  padding: 15px;
+
+}
+div.logo img{
+  display: flex;
+  justify-content: center;
+  width: 100px;
 }
 </style>

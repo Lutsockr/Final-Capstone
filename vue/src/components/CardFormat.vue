@@ -17,7 +17,7 @@
                 <router-link v-bind:to="{name: 'auction', params: {id: auction.id}}" > Select </router-link>
             </button>
 
-            <button>
+            <button v-if="$store.state.token !== ''">
                 <router-link v-bind:to="{name: 'update', params: {id: auction.id}}" >Edit</router-link>
             </button>
 
@@ -94,7 +94,8 @@ export default {
     width: auto;
     height: auto;
     margin: 20px;
-    background-color: aqua;
+    background-color: #333;
+    color: white;
     
 }
 h1{
