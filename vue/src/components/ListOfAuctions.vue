@@ -8,6 +8,7 @@
 <script>
 import CardFormat from './CardFormat.vue'
 import AuctionService from '../services/AuctionService'
+
 export default {
   components: { CardFormat },
   methods: {
@@ -23,6 +24,7 @@ export default {
 
 
 }
+
 </script>
 
 <style>
