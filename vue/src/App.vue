@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="topnav" id="nav">
-      <router-link v-bind:to="{ name: 'home' }">Home | </router-link>
+      <router-link class="active" v-bind:to="{ name: 'home' }">Home</router-link>
       <router-link v-bind:to="{ name: 'login' }" v-if="$store.state.token == ''">Login | </router-link>
       <router-link v-bind:to="{ name: 'register' }" v-if="$store.state.token == ''">Register</router-link>
       <router-link v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">Logout</router-link>
@@ -17,6 +17,7 @@
 .topnav {
   background-color: #333;
   overflow: hidden;
+  width: 100vw;
 }
 
 /* Style the links inside the navigation bar */
@@ -37,7 +38,7 @@
 
 /* Add a color to the active/current link */
 .topnav a.active {
-  background-color: #04AA6D;
+  background-color: rgb(red, green, blue);
   color: white;
 }
 
