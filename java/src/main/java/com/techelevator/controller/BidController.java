@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @RestController
@@ -26,5 +27,10 @@ public class BidController {
     @RequestMapping(path = "/bids/{id}", method = RequestMethod.GET)
     public Bid getBidById(@PathVariable int id) {
         return dao.getBidById(id);
+    }
+
+    @RequestMapping(path = "/highbid/{id}", method = RequestMethod.GET)
+    public BigDecimal getHighestBidAmountByAuctionId(@PathVariable int id) {
+        return dao.getHighestBidAmountByAuctionId(id);
     }
 }

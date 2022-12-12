@@ -18,6 +18,9 @@ export default {
     },
     deleteBidById(bidId) {
         return http.delete(`/bids/${bidId}`)
-    }
+    },
 
+    getHighestBidAmountByAuctionId(auctionId) {
+        return http.get(`/highbid/${auctionId}`)
+    }
 }

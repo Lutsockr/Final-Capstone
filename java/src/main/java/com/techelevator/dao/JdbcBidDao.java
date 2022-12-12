@@ -7,6 +7,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Component;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,6 +37,15 @@ public class JdbcBidDao implements BidDao{
         }
 
         return bid;
+    }
+
+    @Override
+    public BigDecimal getHighestBidAmountByAuctionId(int id) {
+        String sql = "SELECT amount FROM bid " +
+                "WHERE auction_id = ? " +
+                "ORDER BY amount DESC " +
+                "LIMIT 1";
+        return jdbcTemplate.queryForObject(sql, BigDecimal.class, id);
     }
 
     @Override
