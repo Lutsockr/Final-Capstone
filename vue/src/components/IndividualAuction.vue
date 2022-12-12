@@ -1,6 +1,6 @@
 <template>
   <div>
-        <div class="a" v-bind:key="auction.id">
+        <div class="as" v-bind:key="auction.id">
             <h1 class="title">Name of Item: {{ auction.title }}</h1>
             <h2>This auction will end in:</h2>
             <h3 class = "remainingTime"> {{ timeRemaining.days + " Days " + timeRemaining.hours + " Hours " +  timeRemaining.minutes + " Minutes Remaining " }} </h3>  
@@ -87,11 +87,17 @@ export default {
 
 <style>
 
-.a {
-    text-align: center;
-    display: inline-block;
-    justify-content: center;
-    
+.as {
+display: inline-block;
+justify-content: center;
+background-color: #333;
+margin-left: auto;
+margin-right: auto;
+margin-top: 50px;
+color: white;
+text-align: center;
+width: 100%;
+justify-content: center;
 }
 .remainingTime{
     font-style: italic;
