@@ -6,8 +6,9 @@
             <h1 class="title">{{ auction.title }}</h1>
             <img height="200px" v-bind:src="auction.imagePath" >
 
-            <p  class = "remainingTime">{{ timeRemaining(auction).days }} Days {{ timeRemaining(auction).hours }} Hours {{timeRemaining(auction).minutes}} Minutes Remaining</p>
-            <p  class = "remainingTime"> for {{ auction.title }}</p>
+            <p  class = "remainingTime">{{ timeRemaining(auction).days }} Days and 
+                {{ timeRemaining(auction).hours }} Hours Left Before</p>
+            <p  class = "remainingTime"> {{ auction.title }} Closes</p>
 
             <p> Price: $ {{ auction.startingPrice}}</p>
             
