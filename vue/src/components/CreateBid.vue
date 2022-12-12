@@ -8,9 +8,19 @@
 </template>
 
 <script>
-export default {
-    name: "create-bid"
+//import bidService from '../services/BidService'
 
+export default {
+    name: "create-bid",
+    data() {
+        return {
+            bid: {
+                "auctionId": 0,
+                "userId": 0,
+                "bidAmount": 0
+            }
+        }
+    }
 }
 </script>
 
