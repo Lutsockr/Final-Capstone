@@ -99,11 +99,15 @@
   }
 
 }
+html {
+  background-image: url(https://jooinn.com/images/dirty-wood-texture-2.jpg)
+}
 div.topnav {
   animation: colorChange 20s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
   animation-play-state: running;
+ 
 }
 div.topnav a{
   animation: textColorChange 20s;

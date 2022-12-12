@@ -1,28 +1,28 @@
 <template>
 <div>
-  <form v-on:submit.prevent>
+  <form v-on:submit.prevent class="createAuctionForm">
+    <label for="title">Title: </label>
     <div class="field">
-      <label for="title">Title </label>
       <input type="text" name="title" v-model="auction.title" />
     </div>
+    <label for="description">Description: </label>
     <div class="field">
-      <label for="description">Description </label>
-      <input type="text" name="description" v-model="auction.description" /> 
+      <textarea id="textBox" type="text" name="description" v-model="auction.description" /> 
     </div>
+    <label for="startingPrice">Starting Price: </label>
     <div class="field">
-      <label for="startingPrice">Starting Price </label>
       <input type="text" name="startingPrice" v-model="auction.startingPrice" />
     </div>
+    <label for="auctionType">Auction Type: </label>
     <div class="field">
-      <label for="auctionType">Auction Type </label>
       <input type="text" name="typeId" v-model="auction.auctionType.id" />
     </div>
+    <label for="endDate">End Date: </label>
     <div class="field">
-      <label for="endDate">End Date </label>
       <input type="datetime-local" name="endDate" v-model="auction.endDate" />
     </div>
+    <label for="imagePath">Image Url: </label>
     <div class="field">
-      <label for="imagePath">Image Url </label>
       <input type="url" name="imagePath" v-model="auction.imagePath" />
     </div>
     <div class="actions">
@@ -30,9 +30,7 @@
     </div>
    
   </form>
-  <div class="logo">
-   <img   src="../img/Ben.png" />
-  </div>
+
 </div>
 </template>
 
@@ -67,20 +65,32 @@ export default {
 };
 </script>
 <style>
+.createAuctionForm{
+  text-align: center;
+}
+
+#textBox {
+  max-width: 15vw;
+  max-height: 750px;
+}
 div.field{
   padding: 10px;
   
 }
 form{
-  justify-content: center;
+  justify-content: stretch;
   border-color: #344;
-  border-radius: 10px;
+  border-radius: 0px;
   border-style: solid;
   background-color:  #333;
-  margin: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10vw;
   color: white;
   padding: 15px;
-
+  width: 20vw;
+  border-width: 10px;
+  border-color: brown;
 }
 div.logo img{
   display: flex;
