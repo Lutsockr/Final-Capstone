@@ -26,8 +26,7 @@ public class JdbcAuctionDao implements AuctionDao{
                 "RETURNING auction_id";
         int newId = jdbcTemplate.queryForObject(sql, int.class, dto.getOwnerId(), dto.getTitle(), dto.getDescription(),
                 dto.getStartingPrice(), dto.getAuctionTypeId(), dateFormat.format(dto.getEndDate()), dto.getImagePath());
-        Auction createdAuction = getAuctionById(newId);
-        return createdAuction;
+        return getAuctionById(newId);
     }
 
     @Override

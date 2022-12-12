@@ -1,18 +1,20 @@
 package com.techelevator.controller;
 
 import com.techelevator.dao.AuctionDao;
-import com.techelevator.model.Auction;
-import com.techelevator.model.CreateAuctionDto;
-import com.techelevator.model.ListAuctionDto;
-import com.techelevator.model.UpdateAuctionDto;
+import com.techelevator.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @CrossOrigin
+//@PreAuthorize("isAuthenticated()")
 public class AuctionController {
 
     @Autowired
@@ -24,6 +26,7 @@ public class AuctionController {
         return dao.createAuction(dto);
     }
 
+//    @PreAuthorize("permitAll")
     @RequestMapping(path = "/auctions", method = RequestMethod.GET)
     public List<ListAuctionDto> getAuctions() {
         return dao.getAll();
@@ -36,11 +39,15 @@ public class AuctionController {
 
     @RequestMapping(path = "/auctions/{id}", method = RequestMethod.PUT)
     public Auction updateAuction(@RequestBody UpdateAuctionDto dto) {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        String username = auth.getName();
         return dao.updateAuction(dto);
     }
 
     @RequestMapping(path = "/auctions/{id}", method = RequestMethod.DELETE)
-    public void deleteAuctionById(@PathVariable int id) {dao.deleteAuctionById(id);}
+    public void deleteAuctionById(@PathVariable int id) {
+        dao.deleteAuctionById(id);
+    }
 
 
 }
