@@ -28,7 +28,6 @@
     <div class="actions">
       <button type="submit" v-on:click="saveAuction()">Save Auction</button>
     </div>
-   
   </form>
 
 </div>
