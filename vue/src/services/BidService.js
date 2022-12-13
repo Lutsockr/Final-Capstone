@@ -1,4 +1,5 @@
 import axios from 'axios';
+import store from '../store/index.js'
 
 const http = axios.create({
   baseURL: "http://localhost:9000"
@@ -6,21 +7,46 @@ const http = axios.create({
 
 export default {
     placeBid(bid) {
-        return http.post('/bids', bid)
+        const config = {
+            headers: {
+              Authorization: "Bearer " + store.state.token
+            }
+          };
+        return http.post('/bids', bid, config)
     },
 
     getBidById(bidId) {
-        return http.get(`/bids/${bidId}`)
+        const config = {
+            headers: {
+              Authorization: "Bearer " + store.state.token
+            }
+          };
+        return http.get(`/bids/${bidId}`, config)
     },
 
     getBidsByUserId(userId) {
-        return http.get(`/bids/user/${userId}`)
+        const config = {
+            headers: {
+              Authorization: "Bearer " + store.state.token
+            }
+          };
+        return http.get(`/bids/user/${userId}`, config)
     },
     deleteBidById(bidId) {
-        return http.delete(`/bids/${bidId}`)
+        const config = {
+            headers: {
+              Authorization: "Bearer " + store.state.token
+            }
+          };
+        return http.delete(`/bids/${bidId}`, config)
     },
 
     getHighestBidAmountByAuctionId(auctionId) {
-        return http.get(`/highbid/${auctionId}`)
+        const config = {
+            headers: {
+              Authorization: "Bearer " + store.state.token
+            }
+          };
+        return http.get(`/highbid/${auctionId}`, config)
     }
 }
