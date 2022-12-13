@@ -22,7 +22,7 @@ public class JdbcAuctionDao implements AuctionDao{
     public Auction createAuction(CreateAuctionDto dto) {
         String sql = "INSERT INTO auction (owner_id, title, description, starting_price, start_date, end_date, " +
                 "image_path) " +
-                "VALUES (?,?,?,?,?,NOW()::timestamp,to_timestamp(?, 'YYYY-MM-DD HH24:MI:SS'),?) " +
+                "VALUES (?,?,?,?,NOW()::timestamp,to_timestamp(?, 'YYYY-MM-DD HH24:MI:SS'),?) " +
                 "RETURNING auction_id";
         int newId = jdbcTemplate.queryForObject(sql, int.class, dto.getOwnerId(), dto.getTitle(), dto.getDescription(),
                 dto.getStartingPrice(), dateFormat.format(dto.getEndDate()), dto.getImagePath());
