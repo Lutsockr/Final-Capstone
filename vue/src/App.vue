@@ -100,13 +100,15 @@
 
 }
 html {
-  background-image: url(https://jooinn.com/images/dirty-wood-texture-2.jpg)
+  background-image: url(https://img.cgaxis.com/2021/01/dark_oak_wood_33_14_diffuse.jpg)
 }
 div.topnav {
   animation: colorChange 20s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
   animation-play-state: running;
+   position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
  
 }
 div.topnav a{
