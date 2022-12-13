@@ -13,10 +13,6 @@
     <div class="field">
       <input type="text" name="startingPrice" v-model="auction.startingPrice" />
     </div>
-    <label for="auctionType">Auction Type: </label>
-    <div class="field">
-      <input type="text" name="typeId" v-model="auction.auctionType.id" />
-    </div>
     <label for="endDate">End Date: </label>
     <div class="field">
       <input type="datetime-local" name="endDate" v-model="auction.endDate" />
@@ -44,7 +40,6 @@ export default {
         title: "",
         description: "",
         startingPrice: 0,
-        auctionType: 0,
         ownerId: 1,
         endDate: "",
         imagePath: "",
