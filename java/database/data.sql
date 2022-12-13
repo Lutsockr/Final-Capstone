@@ -1,9 +1,9 @@
 BEGIN TRANSACTION;
 
-INSERT INTO users (username,password_hash,role) VALUES ('user','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
-INSERT INTO users (username,password_hash,role) VALUES ('admin','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_ADMIN');
-INSERT INTO users (username,password_hash,role) VALUES ('TestUser1','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
-INSERT INTO users (username,password_hash,role) VALUES ('TestUser2','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
+INSERT INTO users (username,password_hash,role,name,address,phone_number) VALUES ('user','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER','Ben', '1234 Bid Street', '123-456-7890');
+INSERT INTO users (username,password_hash,role,name,address,phone_number) VALUES ('admin','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_ADMIN','Rob', '1234 Bid Street', '123-456-7890');
+INSERT INTO users (username,password_hash,role,name,address,phone_number) VALUES ('TestUser1','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER','Tim', '1234 Bid Street', '123-456-7890');
+INSERT INTO users (username,password_hash,role,name,address,phone_number) VALUES ('TestUser2','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER','Nick', '1234 Bid Street', '123-456-7890');
 
 INSERT INTO auction_type (auction_type_id, name) VALUES (1, 'Test Auction');
 
