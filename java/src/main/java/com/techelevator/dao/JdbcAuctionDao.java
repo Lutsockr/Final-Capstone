@@ -20,12 +20,12 @@ public class JdbcAuctionDao implements AuctionDao{
 
     @Override
     public Auction createAuction(CreateAuctionDto dto) {
-        String sql = "INSERT INTO auction (owner_id, title, description, starting_price, type_id, start_date, end_date, " +
+        String sql = "INSERT INTO auction (owner_id, title, description, starting_price, start_date, end_date, " +
                 "image_path) " +
                 "VALUES (?,?,?,?,?,NOW()::timestamp,to_timestamp(?, 'YYYY-MM-DD HH24:MI:SS'),?) " +
                 "RETURNING auction_id";
         int newId = jdbcTemplate.queryForObject(sql, int.class, dto.getOwnerId(), dto.getTitle(), dto.getDescription(),
-                dto.getStartingPrice(), dto.getAuctionTypeId(), dateFormat.format(dto.getEndDate()), dto.getImagePath());
+                dto.getStartingPrice(), dateFormat.format(dto.getEndDate()), dto.getImagePath());
         return getAuctionById(newId);
     }
 
@@ -60,7 +60,7 @@ public class JdbcAuctionDao implements AuctionDao{
             bids.add(mapRowToBid(results));
         }
         sql = "SELECT auction.auction_id, owner_id, ou.username AS owner_username, title, description, starting_price, " +
-                "bid.bid_id, bid.user_id, bu.username AS bid_username, bid.amount, type_id, auction_type.name, " +
+                "bid.bid_id, bid.user_id, bu.username AS bid_username, bid.amount, type_id, " +
                 "start_date, end_date, image_path " +
                 "FROM auction " +
                 "JOIN users AS ou ON owner_id = user_id " +
@@ -79,9 +79,9 @@ public class JdbcAuctionDao implements AuctionDao{
     @Override
     public Auction updateAuction(UpdateAuctionDto dto) {
         String sql = "UPDATE auction " +
-                "SET title = ?, description = ?, starting_price = ?, type_id = ?, end_date = to_timestamp(?, 'YYYY-MM-DD HH24:MI:SS'), image_path = ? " +
+                "SET title = ?, description = ?, starting_price = ?, end_date = to_timestamp(?, 'YYYY-MM-DD HH24:MI:SS'), image_path = ? " +
                 "WHERE auction_id = ?";
-        jdbcTemplate.update(sql, dto.getTitle(), dto.getDescription(), dto.getStartingPrice(),dto.getAuctionTypeId(),
+        jdbcTemplate.update(sql, dto.getTitle(), dto.getDescription(), dto.getStartingPrice(),
                 dateFormat.format(dto.getEndDate()), dto.getImagePath(), dto.getId());
         return getAuctionById(dto.getId());
     }
@@ -129,7 +129,6 @@ public class JdbcAuctionDao implements AuctionDao{
         Auction auction = new Auction();
         User owner = new User();
         Bid winningBid = new Bid();
-        AuctionType auctionType = new AuctionType();
         auction.setId(rs.getInt("auction_id"));
         owner.setId(rs.getInt("owner_id"));
         owner.setUsername(rs.getString("owner_username"));
@@ -147,9 +146,6 @@ public class JdbcAuctionDao implements AuctionDao{
             winningBid.setBidAmount(rs.getBigDecimal("amount"));
         }
         auction.setWinningBid(winningBid);
-        auctionType.setId(rs.getInt("type_id"));
-        auctionType.setName(rs.getString("name"));
-        auction.setAuctionType(auctionType);
         auction.setStartDate(rs.getTimestamp("start_date"));
         auction.setEndDate(rs.getTimestamp("end_date"));
         auction.setImagePath(rs.getString("image_path"));

@@ -12,7 +12,6 @@ public class Auction {
     private String description;
     private BigDecimal startingPrice;
     private Bid winningBid;
-    private AuctionType auctionType;
     private Date startDate;
     private Date endDate;
     private List<Bid> bids;
@@ -21,14 +20,13 @@ public class Auction {
     public Auction() {
     }
 
-    public Auction(int id, User owner, String title, String description, BigDecimal startingPrice, Bid winningBid, AuctionType auctionType, Date startDate, Date endDate, List<Bid> bids, String imagePath) {
+    public Auction(int id, User owner, String title, String description, BigDecimal startingPrice, Bid winningBid, Date startDate, Date endDate, List<Bid> bids, String imagePath) {
         this.id = id;
         this.owner = owner;
         this.title = title;
         this.description = description;
         this.startingPrice = startingPrice;
         this.winningBid = winningBid;
-        this.auctionType = auctionType;
         this.startDate = startDate;
         this.endDate = endDate;
         this.bids = bids;
@@ -83,14 +81,6 @@ public class Auction {
         this.winningBid = winningBid;
     }
 
-    public AuctionType getAuctionType() {
-        return auctionType;
-    }
-
-    public void setAuctionType(AuctionType auctionType) {
-        this.auctionType = auctionType;
-    }
-
     public Date getStartDate() {
         return startDate;
     }
@@ -132,7 +122,6 @@ public class Auction {
                 ", description='" + description + '\'' +
                 ", startingPrice=" + startingPrice +
                 ", winningBid=" + winningBid +
-                ", auctionType=" + auctionType +
                 ", startDate=" + startDate +
                 ", endDate=" + endDate +
                 ", bids=" + bids +
