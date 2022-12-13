@@ -21,8 +21,8 @@
         v-model="user.username"
         required
         autofocus
-      />
-      <label for="password" class="sr-only">Password</label>
+      /><br>
+      <label for="password" class="sr-only"> Password</label> 
       <input
         type="password"
         id="password"
@@ -30,9 +30,10 @@
         placeholder="Password"
         v-model="user.password"
         required
-      />
+      /><br>
       <router-link :to="{ name: 'register' }">Need an account?</router-link>
-      <button type="submit">Sign in</button>
+      <br>
+      <button class="submit-button" type="submit">Sign in</button>
     </form>
   </div>
 </template>
@@ -74,3 +75,16 @@ export default {
   }
 };
 </script>
+<style scoped>
+button.submit-button{
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  text-align: center;
+  -ms-flex-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  
+ 
+}
+</style>
