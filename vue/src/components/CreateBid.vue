@@ -27,7 +27,7 @@ export default {
                     this.bidAmount = response.data + amount;
                     let bid = {};
                     bid["auctionId"] = this.auctionId;
-                    bid["userId"] = 1;
+                    bid["userId"] = this.$store.state.user.id;
                     bid["bidAmount"] = parseFloat(this.bidAmount);
                     bidService.placeBid(bid).then(response => {
                         if(response.status == 201) {

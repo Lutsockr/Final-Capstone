@@ -25,7 +25,7 @@
                     <td> {{bid.bidAmount}}</td>
                 </tr>
             </div> -->
-            
+            <p>{{this.$store.state.user.username}}</p>
             </table>
         
         </div>
