@@ -13,10 +13,6 @@
       <input type="text" name="startingPrice" v-model="auction.startingPrice" />
     </div>
     <div class="field">
-      <label for="auctionType">Auction Type</label>
-      <input type="text" name="typeId" v-model="auction.auctionType.id" />
-    </div>
-    <div class="field">
       <label for="endDate">End Date</label>
       <input type="datetime-local" name="endDate" v-model="auction.endDate" />
     </div>
@@ -35,15 +31,13 @@ import auctionService from '../services/AuctionService';
 
 export default {
   name: "update-auction",
-  props: ["auctionID"],
   data() {
     return {
       auction: {
         title: "",
         description: "",
         startingPrice: 0,
-        auctionType: 0,
-        ownerId: 1,
+        ownerId: this.$store.state.user.id,
         endDate: "",
         imagePath: "",
       }
