@@ -2,6 +2,7 @@ package com.techelevator.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import javax.validation.constraints.NotEmpty;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
@@ -14,14 +15,20 @@ public class User {
    private String password;
    @JsonIgnore
    private boolean activated;
+   private String name;
+   private String address;
+   private String phoneNumber;
    private Set<Authority> authorities = new HashSet<>();
 
    public User() { }
 
-   public User(int id, String username, String password, String authorities) {
+   public User(int id, String username, String password, String authorities, String name, String address, String phoneNumber) {
       this.id = id;
       this.username = username;
       this.password = password;
+      this.name = name;
+      this.address = address;
+      this.phoneNumber = phoneNumber;
       if(authorities != null) this.setAuthorities(authorities);
       this.activated = true;
    }
@@ -60,6 +67,30 @@ public class User {
 
    public Set<Authority> getAuthorities() {
       return authorities;
+   }
+
+   public String getName() {
+      return name;
+   }
+
+   public void setName(String name) {
+      this.name = name;
+   }
+
+   public String getAddress() {
+      return address;
+   }
+
+   public void setAddress(String address) {
+      this.address = address;
+   }
+
+   public String getPhoneNumber() {
+      return phoneNumber;
+   }
+
+   public void setPhoneNumber(String phoneNumber) {
+      this.phoneNumber = phoneNumber;
    }
 
    public void setAuthorities(Set<Authority> authorities) {

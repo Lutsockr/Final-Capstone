@@ -52,7 +52,7 @@ public class AuctionController {
     public Auction updateAuction(@RequestBody UpdateAuctionDto dto) {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         int userId = userDao.findIdByUsername(auth.getName());
-        dto.setOwnerId(userId);
+        dto.setOwnerId(userId); // Ignore this
         if (userId == dto.getOwnerId()) {
             return dao.updateAuction(dto);
         }
