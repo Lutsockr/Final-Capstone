@@ -105,7 +105,8 @@
 
 }
 html {
-  background-image: url(https://img.cgaxis.com/2021/01/dark_oak_wood_33_14_diffuse.jpg);
+  background: linear-gradient(135deg, #e3ff80 25%, transparent 25%) -32px 0/ 64px 64px, linear-gradient(225deg, rgba(227,255,128,0.5) 25%, transparent 25%) -32px 0/ 64px 64px, linear-gradient(315deg, #e3ff80 25%, transparent 25%) 0 0/ 64px 64px, linear-gradient(45deg, rgba(227,255,128,0.5) 25%, #28a4c5 25%) 0 0/ 64px 64px;
+  background-color: #28a4c5;
   cursor: url('img/money.png'), auto;
 }
 div.topnav {
