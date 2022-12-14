@@ -56,6 +56,7 @@ export default {
   created() {
     auctionService.getAuctionById(this.$route.params.id).then(response => {
             this.auction = response.data;
+            this.auction.endDate = this.auction.endDate.slice(0,-6);
     })
     
   }

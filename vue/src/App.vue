@@ -7,12 +7,17 @@
       <router-link v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">Logout</router-link>
       <router-link v-bind:to="{ name: 'create' }" v-if="$store.state.token != ''">Create Auction</router-link>
       <router-link v-bind:to="{ name: 'bids' }" v-if="$store.state.token != ''">Bids</router-link>
-      
+      <div class="topnav-right">
+      <router-link class="profile" v-bind:to="{ name: 'profile' }" v-if="$store.state.token!=''" >Profile</router-link>
+      </div>
+      <h1></h1>
     </div>
     <router-view />
     
+    
   </div>
 </template>
+
 <style scoped>
 .topnav {
   background-color: #333;
@@ -44,11 +49,7 @@
 }
 
 </style>
-<style scoped> 
-div {
-  cursor:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>💸</text></svg>") 16 0,auto; /*!emojicursor.app*/
-}
-</style>
+
 <style>
 @keyframes colorChange {
   0% {
@@ -105,8 +106,9 @@ div {
 
 }
 html {
-  background-image: url(https://img.cgaxis.com/2021/01/dark_oak_wood_33_14_diffuse.jpg)
-  
+  background: linear-gradient(135deg, #e3ff80 25%, transparent 25%) -32px 0/ 64px 64px, linear-gradient(225deg, rgba(227,255,128,0.5) 25%, transparent 25%) -32px 0/ 64px 64px, linear-gradient(315deg, #e3ff80 25%, transparent 25%) 0 0/ 64px 64px, linear-gradient(45deg, rgba(227,255,128,0.5) 25%, #28a4c5 25%) 0 0/ 64px 64px;
+  background-color: #28a4c5;
+  cursor:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>💰</text></svg>") 16 0,auto; /*!emojicursor.app*/
 }
 div.topnav {
   animation: colorChange 20s;
@@ -122,5 +124,11 @@ div.topnav a{
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
   animation-play-state: running;
+}
+
+/* Right-aligned section inside the top navigation */
+.topnav-right {
+  float: right;
+  
 }
 </style>

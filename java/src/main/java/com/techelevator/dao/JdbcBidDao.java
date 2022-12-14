@@ -45,7 +45,17 @@ public class JdbcBidDao implements BidDao{
                 "WHERE auction_id = ? " +
                 "ORDER BY amount DESC " +
                 "LIMIT 1";
-        return jdbcTemplate.queryForObject(sql, BigDecimal.class, id);
+
+        try {
+            return jdbcTemplate.queryForObject(sql, BigDecimal.class, id);
+        }
+        catch (Exception e) {
+            sql = "SELECT starting_price " +
+                    "FROM auction " +
+                    "WHERE auction_id = ?";
+            return jdbcTemplate.queryForObject(sql, BigDecimal.class, id);
+        }
+
     }
 
     @Override

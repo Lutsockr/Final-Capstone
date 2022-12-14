@@ -8,7 +8,7 @@
             <p  class = "remainingTime">{{ timeRemaining(auction).days }} Days {{ timeRemaining(auction).hours }} Hours {{timeRemaining(auction).minutes}} Minutes Remaining</p>
             <p  class = "remainingTime"> for {{ auction.title }}</p>
 
-            <p> Price: $ {{ auction.startingPrice}}</p>
+            <p> Starting Price: $ {{ auction.startingPrice}}</p>
             
             <p class="seller"> Seller: {{auction.ownerName}} </p>
 
@@ -105,9 +105,8 @@ h1{
     text-align: center;
 }
 .seller{
-    text-align: left;
-
-
+    align-items: center;
+    
 }
 .center {
     display: block;
@@ -115,6 +114,7 @@ h1{
     margin-right: auto;
     width: 50%;   
 }
+
 
 .b {
     display: flex;
@@ -124,7 +124,9 @@ h1{
 .a {
     display: flex;
     display: inline-block;
-   
+    -webkit-box-shadow: 7.5px 6.5px 12px 0.5px #5eff00;
+    -moz-box-shadow: 7.5px 6.5px 12px 0.5px #5eff00;
+    box-shadow: 7.5px 6.5px 12px 0.5px black;
 }
 
 .uploading-image {
@@ -133,6 +135,11 @@ h1{
     margin-right: auto;
     width: 50%;
 }
+.remainingTime {
+   margin-left: 1vw;
+   margin-right: 1vw;
+}
+
 
 
 </style>
