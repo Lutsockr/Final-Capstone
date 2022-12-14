@@ -20,7 +20,6 @@ CREATE TABLE auction (
 	description varchar(400),
 	starting_price numeric,
 	winning_bid_id int,
-	type_id int,
 	start_date timestamp,
 	end_date timestamp,
 	image_path varchar(200),

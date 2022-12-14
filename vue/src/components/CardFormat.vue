@@ -17,7 +17,7 @@
             </button>
 
             <button v-if="$store.state.token !== ''">
-                <router-link v-bind:to="{name: 'update', params: {id: auction.id}}" >Edit</router-link>
+                <router-link v-bind:to="{name: 'update', params: {id: auction.id}}">Edit</router-link>
             </button>
 
                <button v-if="$store.state.token !== ''">
