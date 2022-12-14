@@ -9,7 +9,7 @@ import store from '../store/index'
 import NewAuction from '../views/NewAuction.vue'
 import UpdateAuction from '../views/UpdateAuction.vue'
 import Bids from '../views/Bids'
-
+import Profile from '../views/Profile'
 Vue.use(Router)
 
 /**
@@ -74,6 +74,14 @@ const router = new Router({
       }
     },
     {
+      path: "/profile",
+      name: "profile",
+      component: Profile,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
       path: "/auctions/:id/edit",
       name: "update",
       component: UpdateAuction,
@@ -87,9 +95,9 @@ const router = new Router({
       component: Bids,
       meta: {
         requiresAuth: true
-      }
+      },
     }
-    
+   
   ]
 })
 

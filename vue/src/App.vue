@@ -7,12 +7,17 @@
       <router-link v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">Logout</router-link>
       <router-link v-bind:to="{ name: 'create' }" v-if="$store.state.token != ''">Create Auction</router-link>
       <router-link v-bind:to="{ name: 'bids' }" v-if="$store.state.token != ''">Bids</router-link>
-      
+      <div class="topnav-right">
+      <router-link class="profile" v-bind:to="{ name: 'profile' }" v-if="$store.state.token!=''" >Profile</router-link>
+      </div>
+      <h1></h1>
     </div>
     <router-view />
     
+    
   </div>
 </template>
+
 <style scoped>
 .topnav {
   background-color: #333;
@@ -100,7 +105,8 @@
 
 }
 html {
-  background-image: url(https://img.cgaxis.com/2021/01/dark_oak_wood_33_14_diffuse.jpg)
+  background-image: url(https://img.cgaxis.com/2021/01/dark_oak_wood_33_14_diffuse.jpg);
+  cursor: url('img/money.png'), auto;
 }
 div.topnav {
   animation: colorChange 20s;
@@ -116,5 +122,11 @@ div.topnav a{
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
   animation-play-state: running;
+}
+
+/* Right-aligned section inside the top navigation */
+.topnav-right {
+  float: right;
+  
 }
 </style>
