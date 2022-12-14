@@ -60,11 +60,10 @@ public class JdbcAuctionDao implements AuctionDao{
             bids.add(mapRowToBid(results));
         }
         sql = "SELECT auction.auction_id, owner_id, ou.username AS owner_username, title, description, starting_price, " +
-                "bid.bid_id, bid.user_id, bu.username AS bid_username, bid.amount, type_id, " +
+                "bid.bid_id, bid.user_id, bu.username AS bid_username, bid.amount, " +
                 "start_date, end_date, image_path " +
                 "FROM auction " +
                 "JOIN users AS ou ON owner_id = user_id " +
-                "JOIN auction_type ON type_id = auction_type_id " +
                 "LEFT JOIN bid ON winning_bid_id = bid.bid_id " +
                 "LEFT JOIN users AS bu ON bid.user_id = bu.user_id " +
                 "WHERE auction.auction_id = ?";

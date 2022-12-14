@@ -41,23 +41,34 @@ export default {
         'create-bid': createBid
     },
     name: "individual-auction",
-       props: {
-            'auctionId' : Number
-        },
+    //    props: {
+    //         'id' : Number
+    //     },
         
     data(){
             return{
+                auctionId: parseInt(this.$route.params.id),
                 auction: {
-                   
-
-
-
+                            "id": null,
+                            "owner": {
+                                "id": null,
+                                "username": null,
+                                "authorities": []
+                            },
+                            "title": null,
+                            "description": null,
+                            "startingPrice": null,
+                            "winningBid": null,
+                            "startDate": null,
+                            "endDate": null,
+                            "bids": [],
+                            "imagePath": null
                 },
                 previewImage: null
             }
         },
     created() {
-        auctionService.getAuctionById(this.$route.params.id).then(response => {
+        auctionService.getAuctionById(this.auctionId).then(response => {
             this.auction = response.data;
         })
     },
