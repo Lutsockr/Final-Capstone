@@ -50,7 +50,10 @@ public class JdbcBidDao implements BidDao{
             return jdbcTemplate.queryForObject(sql, BigDecimal.class, id);
         }
         catch (Exception e) {
-            return new BigDecimal(0);
+            sql = "SELECT starting_price " +
+                    "FROM auction " +
+                    "WHERE auction_id = ?";
+            return jdbcTemplate.queryForObject(sql, BigDecimal.class, id);
         }
 
     }
