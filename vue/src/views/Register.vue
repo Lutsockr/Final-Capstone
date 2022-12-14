@@ -6,36 +6,36 @@
         {{ registrationErrorMsg }}
       </div>
       <div >
-      <div>
-      <label for="username" class="sr-only">Username</label>
-      <input
-        type="text"
-        id="username"
-        class="form-control"
-        placeholder="Username"
-        v-model="user.username"
-        required
-        autofocus
-      />
+      <div >
+          <label for="username" class="sr-only">Username</label>
+          <input
+            type="text"
+            id="username"
+            class="form-control"
+            placeholder="Username"
+            v-model="user.username"
+            required
+            autofocus
+          />
       </div>
-      <div>
-      <label for="password" class="sr-only">Password</label>
-      <input
-        type="password"
-        id="password"
-        class="form-control"
-        placeholder="Password"
-        v-model="user.password"
-        required
-      />
-      <input
-        type="password"
-        id="confirmPassword"
-        class="form-control"
-        placeholder="Confirm Password"
-        v-model="user.confirmPassword"
-        required
-      />
+      <div >
+          <label for="password" class="sr-only">Password</label>
+          <input
+            type="password"
+            id="password"
+            class="form-control"
+            placeholder="Password"
+            v-model="user.password"
+            required
+          />
+          <input
+            type="password"
+            id="confirmPassword"
+            class="form-control"
+            placeholder="Confirm Password"
+            v-model="user.confirmPassword"
+            required
+          />
       </div>
       <div>
       <label for="name" class="sr-only">Name</label>

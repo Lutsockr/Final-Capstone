@@ -1,29 +1,33 @@
 <template>
 <div>
   <form v-on:submit.prevent class="createAuctionForm">
-    <label for="title">Title: </label>
-    <div class="field">
-      <input type="text" name="title" v-model="auction.title" />
+    <div class="insideForm">
+        <label for="title">Title: </label>
+        <div class="field">
+          <input id="create-title" type="text" name="title" v-model="auction.title" />
+        </div>
+        <label for="description">Description: </label>
+        <div class="field">
+          <textarea id="create-description" type="text" name="description" v-model="auction.description" /> 
+        </div>
+        
+        <label for="startingPrice">Starting Price: </label>
+        <div class="field">
+          <input id="create-startingPrice" type="text" name="startingPrice" v-model="auction.startingPrice" />
+        </div>
+        <label for="endDate">End Date: </label>
+        <div class="field">
+          <input id="create-endDate" type="datetime-local" name="endDate" v-model="auction.endDate" />
+        </div>
+        <label for="imagePath">Image Url: </label>
+        <div class="field">
+          <input type="url" id="create-image"  name="imagePath" v-model="auction.imagePath" />
+        </div>
+        <div class="actions">
+          <button id="create-submit" type="submit" v-on:click="saveAuction()">Save Auction</button>
+        </div>
     </div>
-    <label for="description">Description: </label>
-    <div class="field">
-      <textarea id="textBox" type="text" name="description" v-model="auction.description" /> 
-    </div>
-    <label for="startingPrice">Starting Price: </label>
-    <div class="field">
-      <input type="text" name="startingPrice" v-model="auction.startingPrice" />
-    </div>
-    <label for="endDate">End Date: </label>
-    <div class="field">
-      <input type="datetime-local" name="endDate" v-model="auction.endDate" />
-    </div>
-    <label for="imagePath">Image Url: </label>
-    <div class="field">
-      <input type="url" name="imagePath" v-model="auction.imagePath" />
-    </div>
-    <div class="actions">
-      <button type="submit" v-on:click="saveAuction()">Save Auction</button>
-    </div>
+    
   </form>
 
 </div>
@@ -61,12 +65,36 @@ export default {
 <style>
 .createAuctionForm{
   text-align: center;
+  border-radius: 50%;
+  width: 30vw;
+  height: 30vw;
+  background-position: center;
+  background-image: url(https://vectorified.com/images/green-dollar-sign-icon-28.png);
+  /* background: linear-gradient(to top right, #1abc9c, #3498db); */
+  position: relative;
 }
 
-#textBox {
-  max-width: 15vw;
-  max-height: 750px;
+.insideForm {
+  text-align: center;
+  position: relative;
+  margin: 10%;
 }
+
+#create-description {
+  max-width: 15vw;
+  min-width: 15vw;
+  max-height: 25vw;
+}
+#create-title, #create-startingPrice, #create-endDate, #create-image, #create-submit{
+  width: 15vw;
+}
+#create-submit { 
+  width: 16vw;
+  color: yellow;
+  background-color: green;
+  
+}
+
 div.field{
   padding: 10px;
   
