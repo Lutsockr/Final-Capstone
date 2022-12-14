@@ -1,7 +1,7 @@
 <template>
 <div class="pin"> 
-<h1 class="page_title"> List of Auctions </h1>
-<card-format />
+  <h1 class="page_title"> List of Auctions </h1>
+  <card-format />
 </div>
 </template>
 
@@ -33,6 +33,6 @@ text-align: center;
 
 }
 .pin{
-  background-image: url(https://static8.depositphotos.com/1570716/1049/i/950/depositphotos_10495668-stock-photo-cork-board-background.jpg)
+  text-align: center;
 }
 </style>
