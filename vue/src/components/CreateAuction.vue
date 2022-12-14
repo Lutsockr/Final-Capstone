@@ -40,7 +40,7 @@ export default {
         title: "",
         description: "",
         startingPrice: 0,
-        ownerId: 1,
+        ownerId: this.$store.state.user.id,
         endDate: "",
         imagePath: "",
       }
