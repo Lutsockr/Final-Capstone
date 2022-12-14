@@ -1,7 +1,6 @@
 <template>
-<div class = 'a'>
+<div class = 'b'>
     <div>
-
         <div class="card a" v-for="auction in auctions" v-bind:key="auction.id">
             <h1 class="title">{{ auction.title }}</h1>
             <img height="200px" v-bind:src="auction.imagePath" >
@@ -24,12 +23,10 @@
                <button v-if="$store.state.token !== ''">
               <a href="#" v-on:click="deleteAuction(auction.id)" onClick="window.location.reload()">Delete</a>
               </button>
-
         </div>
-  </div>
-
-  
+    </div>
 </div>
+
 </template>
 
 <script>
@@ -113,6 +110,11 @@ h1{
     width: 50%;   
 }
 
+.b {
+    display: flex;
+    display: inline-block;
+   
+}
 .a {
     display: flex;
     display: inline-block;
