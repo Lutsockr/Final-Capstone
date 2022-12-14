@@ -44,6 +44,11 @@
 }
 
 </style>
+<style scoped> 
+div {
+  cursor:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>💸</text></svg>") 16 0,auto; /*!emojicursor.app*/
+}
+</style>
 <style>
 @keyframes colorChange {
   0% {
@@ -101,6 +106,7 @@
 }
 html {
   background-image: url(https://img.cgaxis.com/2021/01/dark_oak_wood_33_14_diffuse.jpg)
+  
 }
 div.topnav {
   animation: colorChange 20s;
