@@ -48,12 +48,7 @@ export default {
         
     data(){
             return{
-                auction: {
-                   
-
-
-
-                },
+                auction: {},
                 previewImage: null
             }
         },
