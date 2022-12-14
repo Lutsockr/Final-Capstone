@@ -3,7 +3,7 @@
         <h1 class="profile" style="color:white"> Profile </h1>
          <div class="contact-info">
          <h1 style="color:white"> {{ this.$store.state.user.username }}'s Profile </h1>
-         <h2 >Contact Info<br>Username: {{this.$store.state.user.username}}<br>Name:<br>Address:<br>Phone Number:</h2>
+         <h2 >Contact Info<br>Username: {{this.$store.state.user.username}}<br>Name: {{this.$store.state.user.name}}<br>Address: {{this.$store.state.user.address}}<br>Phone Number: {{this.$store.state.user.phoneNumber}}</h2>
      
          </div>
         
