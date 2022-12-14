@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-  
+
    <list-of-auctions />
      
   </div>
@@ -15,4 +15,5 @@ export default {
   name: "home"
 };
 </script>
+
 

@@ -106,8 +106,9 @@
 
 }
 html {
-  background: linear-gradient(135deg, #e3ff80 25%, transparent 25%) -32px 0/ 64px 64px, linear-gradient(225deg, rgba(227,255,128,0.5) 25%, transparent 25%) -32px 0/ 64px 64px, linear-gradient(315deg, #e3ff80 25%, transparent 25%) 0 0/ 64px 64px, linear-gradient(45deg, rgba(227,255,128,0.5) 25%, #28a4c5 25%) 0 0/ 64px 64px;
-  background-color: #28a4c5;
+background-image: radial-gradient(circle at center center, #fb00ff, #639f7e), repeating-radial-gradient(circle at center center, #fb00ff, #2908ff, 91px, transparent 182px, transparent 91px);
+background-blend-mode: multiply;
+background-color: #639f7e;
   cursor:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>💰</text></svg>") 16 0,auto; /*!emojicursor.app*/
 }
 div.topnav {
