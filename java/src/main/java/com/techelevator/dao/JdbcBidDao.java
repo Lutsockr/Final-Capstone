@@ -64,7 +64,8 @@ public class JdbcBidDao implements BidDao{
         String sql = "SELECT bid_id, auction_id, bid.user_id, users.username, amount " +
                 "FROM bid " +
                 "JOIN users ON bid.user_id = users.user_id " +
-                "WHERE auction_id = ?";
+                "WHERE auction_id = ? " +
+                "ORDER BY amount DESC";
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql, id);
         while (results.next()) {
             bids.add(mapRowToBid(results));
