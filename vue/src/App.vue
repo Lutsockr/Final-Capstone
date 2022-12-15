@@ -19,6 +19,7 @@
 </template>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Diplomata+SC&family=Press+Start+2P&family=Sumana&display=swap');
 .topnav {
   background-color: #333;
   box-shadow: 5px 5px;
@@ -106,10 +107,15 @@
 
 }
 html {
-background-image: radial-gradient(circle at center center, #fb00ff, #639f7e), repeating-radial-gradient(circle at center center, #fb00ff, #2908ff, 91px, transparent 182px, transparent 91px);
+/* background-image: radial-gradient(circle at center center, #fb00ff, #639f7e), repeating-radial-gradient(circle at center center, #fb00ff, #2908ff, 91px, transparent 182px, transparent 91px);
 background-blend-mode: multiply;
-background-color: #639f7e;
-  cursor:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>💰</text></svg>") 25 15,auto; /*!emojicursor.app*/
+background-color: #639f7e; */
+background-image:  linear-gradient(30deg, #4e40de 12%, transparent 12.5%, transparent 87%, #4e40de 87.5%, #4e40de), linear-gradient(150deg, #4e40de 12%, transparent 12.5%, transparent 87%, #4e40de 87.5%, #4e40de), linear-gradient(30deg, #4e40de 12%, transparent 12.5%, transparent 87%, #4e40de 87.5%, #4e40de), linear-gradient(150deg, #4e40de 12%, transparent 12.5%, transparent 87%, #4e40de 87.5%, #4e40de), linear-gradient(60deg, rgba(78,64,222,0.5) 25%, transparent 25.5%, transparent 75%, rgba(78,64,222,0.5) 75%, rgba(78,64,222,0.5)), linear-gradient(60deg, rgba(78,64,222,0.5) 25%, transparent 25.5%, transparent 75%, rgba(78,64,222,0.5) 75%, rgba(78,64,222,0.5));
+background-size: 200px 350px;
+background-position: 0 0, 0 0, 100px 175px, 100px 175px, 0 0, 100px 175px;
+background-color: #4eff47;
+font-family: 'Press Start 2P', cursive;
+cursor:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>💰</text></svg>") 25 15,auto; /*!emojicursor.app*/
 }
 div.topnav {
   animation: colorChange 20s;
