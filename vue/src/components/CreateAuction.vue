@@ -69,7 +69,7 @@ export default {
   width: 30vw;
   height: 30vw;
   background-position: center;
-  background-image: url(https://vectorified.com/images/green-dollar-sign-icon-28.png);
+  background-image: url('../img/green-dollar-sign-icon-28.png');
   /* background: linear-gradient(to top right, #1abc9c, #3498db); */
   position: relative;
   color: black;
