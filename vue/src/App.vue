@@ -6,7 +6,6 @@
       <router-link v-bind:to="{ name: 'register' }" v-if="$store.state.token == ''">Register</router-link>
       <router-link v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">Logout</router-link>
       <router-link v-bind:to="{ name: 'create' }" v-if="$store.state.token != ''">Create Auction</router-link>
-      <router-link v-bind:to="{ name: 'bids' }" v-if="$store.state.token != ''">Bids</router-link>
       <div class="topnav-right">
       <router-link class="profile" v-bind:to="{ name: 'profile' }" v-if="$store.state.token!=''" >Profile</router-link>
       </div>
@@ -25,6 +24,7 @@
   box-shadow: 5px 5px;
   overflow: hidden;
   width: 100vw;
+  z-index: 10;
 }
 
 /* Style the links inside the navigation bar */
