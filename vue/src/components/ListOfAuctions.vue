@@ -1,7 +1,12 @@
 <template>
 <div class="pin"> 
-  <h1 class="page_title"> List of Auctions </h1>
+  <h1>.</h1>
+  <div>
+    <h1 class="page_title"> List of Auctions </h1>
+  </div>
+  
   <card-format />
+ 
 </div>
 </template>
 
