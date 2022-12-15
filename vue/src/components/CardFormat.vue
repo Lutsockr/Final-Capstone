@@ -140,6 +140,39 @@ h1{
    margin-right: 1vw;
 }
 
+@keyframes colorChange {
+  0% {
+    box-shadow: 7.5px 6.5px 12px 0.5px #ff0000;
+  }
+  14% {
+    box-shadow: 7.5px 6.5px 12px 0.5px #ffa500;
+  }
+  28% {
+    box-shadow: 7.5px 6.5px 12px 0.5px #ffff00;
+  }
+  42% {
+    box-shadow: 7.5px 6.5px 12px 0.5px lime;
+  }
+  56% {
+    box-shadow: 7.5px 6.5px 12px 0.5px cyan;
+  }
+  70% {
+    box-shadow: 7.5px 6.5px 12px 0.5px #0000ff;
+  }
+  84% {
+    box-shadow: 7.5px 6.5px 12px 0.5px #4b0082;
+  }
+  100% {
+    box-shadow: 7.5px 6.5px 12px 0.5px #ff0000;
+  }
 
+}
+
+.a {
+  animation: colorChange 20s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+}
 
 </style>

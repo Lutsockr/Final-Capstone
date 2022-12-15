@@ -53,28 +53,28 @@
 <style>
 @keyframes colorChange {
   0% {
-    background: #ff0000;
+    box-shadow: 7.5px 6.5px 12px 0.5px #ff0000;
   }
   14% {
-    background: #ffa500;
+    box-shadow: 7.5px 6.5px 12px 0.5px #ffa500;
   }
   28% {
-    background: #ffff00;
+    box-shadow: 7.5px 6.5px 12px 0.5px #ffff00;
   }
   42% {
-    background: lime;
+    box-shadow: 7.5px 6.5px 12px 0.5px lime;
   }
   56% {
-    background: cyan;
+    box-shadow: 7.5px 6.5px 12px 0.5px cyan;
   }
   70% {
-    background: #0000ff;
+    box-shadow: 7.5px 6.5px 12px 0.5px #0000ff;
   }
   84% {
-    background: #4b0082;
+    box-shadow: 7.5px 6.5px 12px 0.5px #4b0082;
   }
   100% {
-    background: #ff0000;
+    box-shadow: 7.5px 6.5px 12px 0.5px #ff0000;
   }
 
 }
@@ -82,23 +82,8 @@
   0% {
     color: lime;
   }
-  14% {
+  50% {
     color: cyan;
-  }
-  28% {
-    color: #0000ff;
-  }
-  42% {
-    color: #4b0082;
-  }
-  56% {
-    color: #ff0000;
-  }
-  70% {
-    color: #ffa500;
-  }
-  84% {
-    color: #ffff00;
   }
   100% {
     color: lime;
@@ -120,7 +105,7 @@ div.topnav {
  
 }
 div.topnav a{
-  animation: textColorChange 20s;
+  animation: textColorChange 10s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
   animation-play-state: running;
