@@ -124,9 +124,15 @@ h1{
 .a {
     display: flex;
     display: inline-block;
-    -webkit-box-shadow: 7.5px 6.5px 12px 0.5px #5eff00;
-    -moz-box-shadow: 7.5px 6.5px 12px 0.5px #5eff00;
-    box-shadow: 7.5px 6.5px 12px 0.5px black;
+    -webkit-box-shadow: 10.5px 10.5px 20.5px 3px #fa47ee;
+    -moz-box-shadow: 10.5px 10.5px 20.5px 3px #fa47ee;
+    box-shadow: 10.5px 10.5px 20.5px 3px #fa47ee;
+    background: rgba(255,255,255,0.55);
+background: rgba(255,255,255,0.4);
+-webkit-backdrop-filter: blur(1px);
+backdrop-filter: blur(1px);
+border: 1px solid rgba(255,255,255,0.2);
+
 }
 
 .uploading-image {
