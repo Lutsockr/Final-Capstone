@@ -30,6 +30,7 @@ const router = new Router({
       name: 'home',
       component: Home,
       meta: {
+        title: "Home",
         requiresAuth: false
       }
     },
@@ -46,6 +47,7 @@ const router = new Router({
       name: "logout",
       component: Logout,
       meta: {
+        title: "Logout",
         requiresAuth: false
       }
     },
@@ -54,6 +56,7 @@ const router = new Router({
       name: "register",
       component: Register,
       meta: {
+        title: "Register",
         requiresAuth: false
       }
     },
@@ -62,6 +65,7 @@ const router = new Router({
       name: "create",
       component: NewAuction,
       meta: {
+        title: "Create",
         requiresAuth: true
       }
     },
@@ -70,6 +74,7 @@ const router = new Router({
       name: "auction",
       component: Auction,
       meta: {
+        title: "Auction",
         requiresAuth: false
       }
     },
@@ -78,6 +83,7 @@ const router = new Router({
       name: "profile",
       component: Profile,
       meta: {
+        title: "Profile",
         requiresAuth: true
       }
     },
@@ -86,6 +92,7 @@ const router = new Router({
       name: "update",
       component: UpdateAuction,
       meta: {
+        title: "Update Auction",
         requiresAuth: true
       }
     },
@@ -94,6 +101,7 @@ const router = new Router({
       name: "bids",
       component: Bids,
       meta: {
+        title: "Bids",
         requiresAuth: true
       },
     }
@@ -112,6 +120,11 @@ router.beforeEach((to, from, next) => {
     // Else let them go to their next destination
     next();
   }
+});
+
+router.beforeEach((to, from, next) => {
+  document.title = `${to.meta.title} | Silent Auction `;
+  next();
 });
 
 export default router;

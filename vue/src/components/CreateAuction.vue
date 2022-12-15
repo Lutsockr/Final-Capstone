@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="create-auction">
   <form v-on:submit.prevent class="createAuctionForm">
     <div class="insideForm">
         <label for="title">Title: </label>
@@ -72,6 +72,7 @@ export default {
   background-image: url(https://vectorified.com/images/green-dollar-sign-icon-28.png);
   /* background: linear-gradient(to top right, #1abc9c, #3498db); */
   position: relative;
+  color: black;
 }
 
 .insideForm {
