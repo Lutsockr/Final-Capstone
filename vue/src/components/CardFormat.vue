@@ -128,10 +128,10 @@ h1{
     -moz-box-shadow: 10.5px 10.5px 20.5px 3px #fa47ee;
     box-shadow: 10.5px 10.5px 20.5px 3px #fa47ee;
     background: rgba(255,255,255,0.55);
-background: rgba(255,255,255,0.4);
--webkit-backdrop-filter: blur(1px);
-backdrop-filter: blur(1px);
-border: 1px solid rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.4);
+    -webkit-backdrop-filter: blur(1px);
+    backdrop-filter: blur(1px);
+    border: 1px solid rgba(255,255,255,0.2);
 
 }
 
