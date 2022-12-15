@@ -2,7 +2,7 @@
 <div class="pin"> 
   <h1>.</h1>
   <div>
-    <h1 class="page_title"> List of Auctions </h1>
+    <h2 class="page_title"> List of Auctions </h2>
   </div>
   
   <card-format />
