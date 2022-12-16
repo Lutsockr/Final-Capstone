@@ -93,7 +93,7 @@ button.delete, a.deleteLink {
 }
 
 .card{
-    border-radius: 10px;
+    border-radius: 15px;
     border: 2px solid black;
     width: auto;
     height: auto;
@@ -123,17 +123,26 @@ h1{
    
 }
 .a {
-    display: flex;
-    display: inline-block;
-    -webkit-box-shadow: 10.5px 10.5px 20.5px 3px #fa47ee;
-    -moz-box-shadow: 10.5px 10.5px 20.5px 3px #fa47ee;
-    box-shadow: 10.5px 10.5px 20.5px 3px #fa47ee;
-    background: rgba(255,255,255,0.55);
-background: rgba(255,255,255,0.4);
--webkit-backdrop-filter: blur(1px);
-backdrop-filter: blur(1px);
-border: 1px solid rgba(255,255,255,0.2);
+display: flex;
+display: inline-block;
+border: solid;
+border-width: 5px;
+border-color: rgb(250, 4, 250);
 
+
+-webkit-box-shadow: 14.5px 14.5px 20.5px 3px #eb0af4;
+-moz-box-shadow: 14.5px 14.5px 20.5px 3px #eb0af4;
+box-shadow: 14.5px 14.5px 20.5px 3px #eb0af4;
+
+/* background: rgba(255,255,255,0.2);
+-webkit-backdrop-filter: blur(9px);
+backdrop-filter: blur(9px);
+
+
+animation: colorChange 20s;
+animation-timing-function: ease-in-out;
+animation-iteration-count: infinite;
+animation-play-state: running; */
 }
 
 .uploading-image {
@@ -145,6 +154,7 @@ border: 1px solid rgba(255,255,255,0.2);
 .remainingTime {
    margin-left: 1vw;
    margin-right: 1vw;
+   
 }
 
 @keyframes colorChange {
@@ -175,11 +185,12 @@ border: 1px solid rgba(255,255,255,0.2);
 
 }
 
-.a {
+/* .a {
   animation: colorChange 20s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
   animation-play-state: running;
-}
+  
+} */
 
 </style>

@@ -1,9 +1,9 @@
 <template>
     <div class="profile-main">
 
-        <h1 class="profile-title" > Profile </h1>
+        
        
-        <h1 style="color:white"> {{ this.$store.state.user.username }}'s Profile </h1>
+        <h1 class="username" > {{ this.$store.state.user.username }}'s Profile </h1>
 
         <div class="profile-box">
             <tr class="profile-table">
@@ -55,20 +55,35 @@ color: black;
    
     
 }
-.profile-box{
-    /* display: flex;
-    justify-content: center; */
-    /* color: #639f7e;
-    background-color: black;*/
+.username {
+    background-color: rgb(207, 41, 212);
     width:  40vw;
-    height: 40vw;
+    border-color: black;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 200px;
+    margin-top: 80px;
     border: solid;
     border-width: 20px;
     display: flex;
     align-items: center;
+    padding: 20px;
+    justify-content: center;
+    
+    
+
+}
+.profile-box{
+    background-color: rgb(207, 41, 212);
+    width:  40vw;
+    height: 40vw;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    border: solid;
+    border-width: 20px;
+    display: flex;
+    align-items: center;
+    padding: 20px
     
     
     /* border-radius: 60%; */
