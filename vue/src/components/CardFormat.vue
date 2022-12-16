@@ -93,7 +93,7 @@ button.delete, a.deleteLink {
 
 .card{
     border-radius: 10px;
-    border: 2px solid black;
+    border: 5px solid rgb(207, 41, 212);
     width: auto;
     height: auto;
     margin: 20px;
@@ -165,6 +165,10 @@ h1{
     box-shadow: 7.5px 6.5px 12px 0.5px #ff0000;
   }
 
+}
+
+.card {
+  box-shadow: 7.5px 6.5px 12px 0.5px rgb(207, 41, 212);
 }
 
 .title {
