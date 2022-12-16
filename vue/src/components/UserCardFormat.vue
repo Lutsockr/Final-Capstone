@@ -93,7 +93,7 @@ button.delete, a.deleteLink {
 }
 
 .card{
-    border-radius: 10px;
+    border-radius: 15px;
     border: 2px solid black;
     width: auto;
     height: auto;
@@ -123,16 +123,35 @@ h1{
    
 }
 .a {
-    display: flex;
-    display: inline-block;
-    -webkit-box-shadow: 10.5px 10.5px 20.5px 3px #fa47ee;
-    -moz-box-shadow: 10.5px 10.5px 20.5px 3px #fa47ee;
-    box-shadow: 10.5px 10.5px 20.5px 3px #fa47ee;
-    background: rgba(255,255,255,0.55);
-background: rgba(255,255,255,0.4);
--webkit-backdrop-filter: blur(1px);
-backdrop-filter: blur(1px);
-border: 1px solid rgba(255,255,255,0.2);
+display: flex;
+display: inline-block;
+border: 1px solid rgba(255,255,255,0.15);
+
+
+background: rgba(255,255,255,0.5);
+-webkit-backdrop-filter: blur(10px);
+backdrop-filter: blur(10px);
+
+
+/* -webkit-box-shadow: 14px 14px 23px 4px #000000;
+-moz-box-shadow: 14px 14px 23px 4px #000000;
+box-shadow: 14px 14px 23px 4px #000000; */
+
+animation: colorChange 20s;
+animation-timing-function: ease-in-out;
+animation-iteration-count: infinite;
+animation-play-state: running;
+
+/* -webkit-box-shadow: colorChange;
+-moz-box-shadow: 14px 14px 23px 4px #000000;
+box-shadow: 14px 14px 23px 4px #000000; */
+
+/* -webkit-box-shadow: colorChange;
+-moz-box-shadow: 14px 14px 23px 4px colorChange;
+box-shadow: 14px 14px 23px 4px colorChange; */
+/* -webkit-box-shadow: 32px 32px 10px 3px colorChange;
+-moz-box-shadow: 32px 32px 10px 3px #dddddd;
+box-shadow: 32px 32px 10px 3px #dddddd; */
 
 }
 
@@ -175,11 +194,12 @@ border: 1px solid rgba(255,255,255,0.2);
 
 }
 
-.a {
+/* .a {
   animation: colorChange 20s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
   animation-play-state: running;
-}
+  
+} */
 
 </style>

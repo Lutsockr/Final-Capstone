@@ -2,7 +2,7 @@
 <div class="create-auction">
   <form v-on:submit.prevent class="createAuctionForm">
     <div class="insideForm">
-        <label for="title">Title: </label>
+        <label for="title" >Title: </label>
         <div class="field">
           <input id="create-title" type="text" name="title" v-model="auction.title" />
         </div>
@@ -79,15 +79,19 @@ export default {
   text-align: center;
   position: relative;
   margin: 10%;
+  color: rgb(250, 4, 250)
 }
 
 #create-description {
   max-width: 15vw;
   min-width: 15vw;
   max-height: 25vw;
+  background: rgb(250, 4, 250);
 }
 #create-title, #create-startingPrice, #create-endDate, #create-image, #create-submit{
   width: 15vw;
+  background: rgb(253, 2, 253);
+  
 }
 #create-submit { 
   width: 16vw;
@@ -119,5 +123,9 @@ div.logo img{
   display: flex;
   justify-content: center;
   width: 100px;
+}
+
+.field {
+  color: red;
 }
 </style>

@@ -5,8 +5,8 @@
             <h1 class="title">{{ auction.title }}</h1>
             <img height="200px" v-bind:src="auction.imagePath" >
 
-            <p  class = "remainingTime">{{ timeRemaining(auction).days }} Days {{ timeRemaining(auction).hours }} Hours {{timeRemaining(auction).minutes}} Minutes Remaining</p>
-            <p  class = "remainingTime"> for {{ auction.title }}</p>
+            <p  class = "remainingTime"><strong>{{ timeRemaining(auction).days }} Days {{ timeRemaining(auction).hours }} Hours {{timeRemaining(auction).minutes}} Minutes Remaining</strong></p>
+            <p  class = "remainingTime"><strong> for {{ auction.title }}</strong></p>
 
             <p> Starting Price: $ {{ auction.startingPrice}}</p>
             
@@ -124,15 +124,8 @@ h1{
 .a {
     display: flex;
     display: inline-block;
-    -webkit-box-shadow: 10.5px 10.5px 20.5px 3px #fa47ee;
-    -moz-box-shadow: 10.5px 10.5px 20.5px 3px #fa47ee;
-    box-shadow: 10.5px 10.5px 20.5px 3px #fa47ee;
-    background: rgba(255,255,255,0.55);
-    background: rgba(255,255,255,0.4);
-    -webkit-backdrop-filter: blur(1px);
-    backdrop-filter: blur(1px);
-    border: 1px solid rgba(255,255,255,0.2);
-
+    
+   
 }
 
 .uploading-image {
@@ -174,11 +167,11 @@ h1{
 
 }
 
-.a {
-  animation: colorChange 20s;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
-  animation-play-state: running;
+.title {
+    color: rgb(207, 41, 212);
+    
+    margin: 5px;
+    padding: 2px;
 }
 
 </style>

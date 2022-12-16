@@ -1,6 +1,6 @@
 <template>
 <div class="pin"> 
-  <h1>.</h1>
+  
   <div>
     <h2 class="page_title"> List of Auctions </h2>
   </div>

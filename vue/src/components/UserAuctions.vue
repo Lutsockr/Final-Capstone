@@ -1,6 +1,5 @@
 <template>
 <div class="users-auctions"> 
-  <h1>.</h1>
   <div>
     <h1 class="page_title"> Your Auctions </h1>
   </div>

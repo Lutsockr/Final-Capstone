@@ -3,7 +3,7 @@
 
         <h1 class="profile-title" > Profile </h1>
        
-        <h1 style="color:white"> {{ this.$store.state.user.username }}'s Profile </h1>
+        <h1 style="color:white" class="username" > {{ this.$store.state.user.username }}'s Profile </h1>
 
         <div class="profile-box">
             <tr class="profile-table">
@@ -55,11 +55,11 @@ color: black;
    
     
 }
+.username {
+    color: rgb(207, 41, 212);
+}
 .profile-box{
-    /* display: flex;
-    justify-content: center; */
-    /* color: #639f7e;
-    background-color: black;*/
+    background-color: rgb(207, 41, 212);
     width:  40vw;
     height: 40vw;
     margin-left: auto;
