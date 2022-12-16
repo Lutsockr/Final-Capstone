@@ -167,6 +167,13 @@ h1{
 
 }
 
+.card {
+  animation: colorChange 20s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+}
+
 .title {
     color: rgb(207, 41, 212);
     
