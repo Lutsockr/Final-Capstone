@@ -125,34 +125,24 @@ h1{
 .a {
 display: flex;
 display: inline-block;
-border: 1px solid rgba(255,255,255,0.15);
+border: solid;
+border-width: 5px;
+border-color: rgb(250, 4, 250);
 
 
-background: rgba(255,255,255,0.5);
--webkit-backdrop-filter: blur(10px);
-backdrop-filter: blur(10px);
+-webkit-box-shadow: 14.5px 14.5px 20.5px 3px #eb0af4;
+-moz-box-shadow: 14.5px 14.5px 20.5px 3px #eb0af4;
+box-shadow: 14.5px 14.5px 20.5px 3px #eb0af4;
 
+/* background: rgba(255,255,255,0.2);
+-webkit-backdrop-filter: blur(9px);
+backdrop-filter: blur(9px);
 
-/* -webkit-box-shadow: 14px 14px 23px 4px #000000;
--moz-box-shadow: 14px 14px 23px 4px #000000;
-box-shadow: 14px 14px 23px 4px #000000; */
 
 animation: colorChange 20s;
 animation-timing-function: ease-in-out;
 animation-iteration-count: infinite;
-animation-play-state: running;
-
-/* -webkit-box-shadow: colorChange;
--moz-box-shadow: 14px 14px 23px 4px #000000;
-box-shadow: 14px 14px 23px 4px #000000; */
-
-/* -webkit-box-shadow: colorChange;
--moz-box-shadow: 14px 14px 23px 4px colorChange;
-box-shadow: 14px 14px 23px 4px colorChange; */
-/* -webkit-box-shadow: 32px 32px 10px 3px colorChange;
--moz-box-shadow: 32px 32px 10px 3px #dddddd;
-box-shadow: 32px 32px 10px 3px #dddddd; */
-
+animation-play-state: running; */
 }
 
 .uploading-image {
@@ -164,6 +154,7 @@ box-shadow: 32px 32px 10px 3px #dddddd; */
 .remainingTime {
    margin-left: 1vw;
    margin-right: 1vw;
+   
 }
 
 @keyframes colorChange {

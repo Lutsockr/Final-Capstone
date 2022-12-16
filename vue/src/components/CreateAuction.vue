@@ -69,8 +69,15 @@ export default {
   width: 30vw;
   height: 30vw;
   background-position: center;
-  background-image: url('../img/green-dollar-sign-icon-28.png');
-  /* background: linear-gradient(to top right, #1abc9c, #3498db); */
+
+
+  background: rgba(255,255,255,0.5);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  border: solid;
+  border-width: 22px;
+  border-color: rgb(250, 4, 250);
+
   position: relative;
   color: black;
 }
@@ -95,8 +102,8 @@ export default {
 }
 #create-submit { 
   width: 16vw;
-  color: yellow;
-  background-color: green;
+  color: rgb(4, 253, 4);
+  background-color: blue;
   
 }
 
